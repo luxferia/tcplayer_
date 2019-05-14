@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Desafio TC">
+  <meta name="author" content="Stephanne Leão">
+  <title>Desafio TC</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="main.css" rel="stylesheet">
+
+   <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8.1.0/bitmovinplayer.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main role="main" class="container">
+    <div id="my-player"></div>
+
+  </main><!-- /.container -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  <script type="text/javascript">
+
+    const container = document.getElementById('my-player');
+
+
+    const playerConfig = {
+
+      // key: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+      key: '4030a021-73c5-48f7-b90f-7e36107e1391'
+
+    };
+
+    const source = {
+
+      title: "Getting Started with the Bitmovin Player",
+      description: "Now you are ready to embed the Bitmovin Player into your own website :)",
+      dash: 'https://ctsr525679amd-theplatform.akamaized.net/video/Telecine_-_Production/344/733/TVODR-017410_58790469901_mp4_video_640x360_408000_primary_audio_eng_1_1556900850314.mpd?hdnts=st=1556915014~exp=1556915344~acl=/Telecine_-_Production/344/733/*~hmac=a594a75d4f8af1a32f7ba71c1da4c47576fad4e8be8bef461f57c8e4721ae738',
+      // hls: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8',
+      // progressive: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/MI201109210084_mpeg-4_hd_high_1080p25_10mbits.mp4',
+      poster: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/poster.jpg'
+    };
+    
+    const player = new bitmovin.player.Player(container, playerConfig);
+
+    player.load(source).then(
+      player => {
+        console.log('Successfully created Bitmovin Player instance')
+      },
+      reason => {
+        console.log('Error while creating Bitmovin Player instance')
+      }
+    );
+
+  </script>
+</body>
+</html>
