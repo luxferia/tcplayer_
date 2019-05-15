@@ -1,0 +1,174 @@
+/* ==========================================================================
+   ESTRUTURA DO LAYOUT
+   ========================================================================== */
+
+/* HEADER
+ * -------------------------- */
+
+.header {
+    &-navbar {
+        z-index: 99;
+        @include padding($space-xxs null);
+
+        .navbar-brand {
+            #{$_link-hover} {
+                transform: scale(1.05);
+            }
+        }
+
+        .navbar-text {
+            @extend .small;
+            line-height: $line-height-heading;
+        }
+
+        .navbar-nav {
+            .nav-link {
+                text-transform: uppercase;
+                font-size: $font-size-small-perc;
+                border: 1px solid transparent;
+                border-radius: $space-xxs;
+                @include padding(.35rem null);
+
+                @media (min-width: $screen-xl-min) {
+                    @include padding(null ($space-xs * 1.5));
+                }
+            }
+        }
+
+        .navbar-toggler {
+            border-color: transparent;
+        }
+
+        &.navbar-dark {
+            background-color: rgba($color-secondary-dk, .9);
+            
+            .navbar-text, .nav-link {
+                color: white;
+            }
+
+            .link-highlight {
+                border-color: white;
+            }
+
+            .link-highlight, .nav-link {
+                #{$_link-hover} {
+                    @include btn-style(white, $color-secondary-dk, #f8f9fa);
+                }
+            }
+
+            .link-img {
+                #{$_link-hover} {
+                    transform: scale(1.05);
+                    background-color: transparent;
+                    border-color: transparent;
+                }
+            }
+        }
+
+        @media (max-width: $screen-xs-max) {
+            .nav-item {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: $screen-sm-max) {
+            .navbar-nav {
+                @include padding($space-xs null null);
+            }
+
+            .nav-link {
+                text-align: center;
+                @include padding(null $space-xxs);
+                @include margin(null null $space-xxs);
+            }
+            
+        }
+
+        @media (max-width: $screen-md-max) {
+            .navbar-brand {
+                max-width: 10rem;
+            }
+
+            .navbar-text {
+                font-size: 75%;
+            }
+
+            .link-img {
+                max-width: 5rem;
+            }
+        }
+    }
+}
+
+
+
+/* FOOTER
+ * -------------------------- */
+
+.footer {
+    color: white;
+    background-color: $color-secondary-dk;
+
+    .nav {
+        .nav-link {
+            color: white;
+
+            #{$_link-hover} {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+
+/* SECTIONS
+ * -------------------------- */
+
+.section-webdoor,
+.webdoor-showcase-carousel {
+    .webdoor-item {
+        &:before {
+            bottom: -1px;
+        }
+
+        @media (min-width: $screen-xl-min) {
+            p {
+                max-width: 23.7rem;
+            }
+        }
+    }
+}
+
+.section-webdoor {
+    border-bottom: 2px solid black;
+
+    .webdoor-item {
+        background-position: center 4.5rem;
+        @include padding(calc(4.5rem + 50%) null null);
+        
+        &:before {
+            background: -moz-linear-gradient(transparent 25%, black 37%);
+            background: -webkit-linear-gradient(transparent 25%, black 37%);
+            background: linear-gradient(transparent 25%, black 37%);
+            @include before-after02;
+        }
+
+        @media (min-width: $screen-sm-min) {
+            @include padding(($space-md * 2) null null);
+
+            &:before {
+                background: -moz-linear-gradient(left, black 33%, transparent 50%);
+                background: -webkit-linear-gradient(left, black 33%, transparent 50%);
+                background: linear-gradient(to right, black 33%, transparent 50%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=1 );
+            }
+        }
+
+        @media (min-width: $screen-xl-min) {
+            p {
+                max-width: 23.7rem;
+            }
+        }
+    }
+}
+

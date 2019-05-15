@@ -1,0 +1,302 @@
+// ========================================================================== //
+//	MIXINS
+// ========================================================================== //
+/***
+ * $type: margin || padding
+ * $gutter: tamanho do espacamento
+ * $i: escala de tamanho do BS 1 - 2 - 3 - 4
+ * $bp: breakpoint de classe do BS
+ ***/
+ 
+@mixin set-gutters($type, $gutter, $i, $bp:null){
+    @if $bp != null {
+        @if $type == 'margin' {
+            .m-#{$bp}-#{$i} {
+                @include margin($gutter);
+            }
+            .mt-#{$bp}-#{$i}, .my-#{$bp}-#{$i} {
+                @include margin($gutter null null);
+            }
+            .mb-#{$bp}-#{$i}, .my-#{$bp}-#{$i} {
+                @include margin(null null $gutter);
+            }
+            .ml-#{$bp}-#{$i}, .mx-#{$bp}-#{$i} {
+                @include margin(null null null $gutter);
+            }
+            .mr-#{$bp}-#{$i}, .mx-#{$bp}-#{$i} {
+                @include margin(null $gutter null null);
+            }
+        }
+
+        @else {
+            .p-#{$bp}-#{$i} {
+                @include padding($gutter);
+            }
+            .pt-#{$bp}-#{$i}, .py-#{$bp}-#{$i} {
+                @include padding($gutter null null);
+            }
+            .pb-#{$bp}-#{$i}, .py-#{$bp}-#{$i} {
+                @include padding(null null $gutter);
+            }
+            .pl-#{$bp}-#{$i}, .px-#{$bp}-#{$i} {
+                @include padding(null null null $gutter);
+            }
+            .pr-#{$bp}-#{$i}, .px-#{$bp}-#{$i} {
+                @include padding(null $gutter null null);
+            }
+        }
+    }
+
+    @else {
+        @if $type == 'margin' {
+            .m-#{$i} {
+                @include margin($gutter);
+            }
+            .mt-#{$i}, .my-#{$i} {
+                @include margin($gutter null null);
+            }
+            .mb-#{$i}, .my-#{$i} {
+                @include margin(null null $gutter);
+            }
+            .ml-#{$i}, .mx-#{$i} {
+                @include margin(null null null $gutter);
+            }
+            .mr-#{$i}, .mx-#{$i} {
+                @include margin(null $gutter null null);
+            }
+        }
+        @else {
+            .p-#{$i} {
+                @include padding($gutter);
+            }
+            .pt-#{$i}, .py-#{$i} {
+                @include padding($gutter null null);
+            }
+            .pb-#{$i}, .py-#{$i} {
+                @include padding(null null $gutter);
+            }
+            .pl-#{$i}, .px-#{$i} {
+                @include padding(null null null $gutter);
+            }
+            .pr-#{$i}, .px-#{$i} {
+                @include padding(null $gutter null null);
+            }
+        }
+    }
+}
+
+
+
+
+@mixin before-after01 {
+    content: '';
+    display: inline-block;
+}
+
+@mixin before-after02($d:null) {
+    @include before-after01;
+    position: absolute;
+    z-index: 0;
+    @if $d == "x" {
+        left: 0;
+        right: 0;
+        } @else if $d == "y" {
+            top: 0;
+            bottom: 0;
+            } @else {
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+}
+
+@mixin font-size-default {
+    font-size: $font-size-base;
+}
+
+@mixin icon-font-default {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+@mixin img-optimized {
+    image-rendering: optimizeSpeed;             // parar suavizacao, + veloz
+    image-rendering: -moz-crisp-edges;          // firefox
+    image-rendering: -o-crisp-edges;            // opera
+    image-rendering: -webkit-optimize-contrast; // chrome / safari
+    image-rendering: pixelated;                 // chrome
+    image-rendering: optimize-contrast;         // css3 proposto
+    -ms-interpolation-mode: nearest-neighbor;   // ie8+
+}
+
+
+//* ESPACAMENTO ZERO (padding e margin) *//
+
+@mixin no-margin {
+    margin: 0;
+}
+@mixin no-padding {
+    padding: 0;
+}
+@mixin no-float {
+    float: none;
+}
+@mixin no-space {
+	@include no-margin;
+    @include no-padding;
+}
+
+//* BUTTON *//
+// Para o :hover e afins, as cores escurecem 10%
+
+@mixin btn-style(
+    $bd-color,              // cor da borda : requerido
+    $color:null,            // cor do texto : opcional
+    $bg-color:$bd-color    // cor de fundo : default = cor da borda | null | trasparent
+    ) {
+
+    border-color: $bd-color;
+
+    @if $color != null {
+        color: $color;
+    }
+
+    @if $bg-color != null or $bg-color != 'transparent' {
+        background-color: $bg-color;
+    }
+}
+
+
+@mixin btn-style-full(
+    $bd-color,                  // cor da borda : requerido
+    $color:null,                // cor do texto : opcional
+    $bg-color:$bd-color,        // cor de fundo : default = cor da borda | null | trasparent
+    $bg-color-hover:null,      // cor da fundo em hover : cor da borda | null | transparent | light ou lt | dark ou dk
+    $color-hover:$color           // cor do texto em hover - opcional 
+    ){
+
+    @include btn-style($bd-color, $color, $bg-color);
+
+    #{$_btn-fullstate} { // HOVER, FOCUS, ACTIVE, ETC
+        @if $bg-color-hover == 'light' or $bg-color-hover == 'lt' or $bg-color-hover == null {
+            @include btn-style(lighten($bd-color, 7%), $color-hover, lighten($bd-color, 7%));
+        }
+
+        @else if $bg-color-hover == 'dark' or $bg-color-hover == 'dk' {
+            @include btn-style(darken($bd-color, 7%), $color-hover, darken($bd-color, 7%));
+        }
+
+        @else if $bg-color-hover == 'trasparent' {
+            @include btn-style(darken($bd-color, 7%), $color-hover, $bg-color-hover);
+        }
+
+        @else {
+            @include btn-style(lighten($bd-color, 7%), $color-hover, lighten($bg-color-hover, 7%));
+        }
+    }
+}
+
+//* ALINHAMENTO VERTICAL *//
+// Para alinhar verticalmente ao centro, elemento pai precisa ter uma altura. 
+
+// aplicado no elemento pai - para não criar deformacoes no elemento filho.
+@mixin preserve-3d {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+// aplicado no elemento filho
+@mixin align-middle {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+@function calcLinesHeight($fs, $lines, $lh) {
+    @return ($fs * $lines) * $lh;
+}
+
+@mixin linesHeight($fs:$font-size-base, $lines:1, $lh:$line-height-base, $prop:'height') {
+    #{$prop}: calcLinesHeight($fs, $lines, $lh);
+}
+
+
+// ========================================================================== //
+//	PLACEHOLDERS
+// ========================================================================== //
+
+// Alguns placeholders nada mais sao dos mixins. Para entender melhor, consultar os mixins.
+
+%font-size-default {
+    @include font-size-default;
+}
+
+%before-after01 {
+    @include before-after01;
+}
+%no-margin {
+    @include no-margin;
+}
+%no-padding {
+    @include no-padding;
+}
+%no-space {
+    @include no-space;
+}
+%no-float {
+    @include no-float;
+}
+
+%transition-default {
+    transition: all 0.3s;
+}
+
+%no-list-style { // retira padding, margin e list-style para <ul>
+	@include no-space;
+	list-style: none;
+}
+
+%no-border {
+	border: none;
+}
+
+%preserve-3d {
+    @include preserve-3d;
+}
+
+%align-middle {
+    @include align-middle;
+}
+
+%btn-absolute-right {
+    @include position(relative, null);
+    @include padding($space-xxs null);
+
+    > .btn {
+        text-transform: none;
+        font-size: .75rem;
+        @include position(absolute, $space-xxs 0 null null);
+    }
+}
+
+%icon-font-default {
+    @include icon-font-default;
+}
+
+%no-link-style {
+    font-style: normal !important;
+    text: {
+        decoration: none !important;
+        transform: none;
+    }
+}
+
+%img-optimized {
+    @include img-optimized;
+}

@@ -1,0 +1,400 @@
+/* ==========================================================================
+   MODIFICACOES DO FRAMEWORK
+   ========================================================================== */
+
+@include set-gutters(margin, $space-xxs !important, 1);
+@include set-gutters(margin, $space-xs !important, 2);
+@include set-gutters(margin, $space-xs + $space-xxs !important, 3);
+@include set-gutters(margin, $space-sm !important, 4);
+@include set-gutters(margin, $space-md !important, 5);
+@include set-gutters(margin, 0 !important, 0);
+
+@include set-gutters(padding, $space-xxs !important, 1);
+@include set-gutters(padding, $space-xs !important, 2);
+@include set-gutters(padding, $space-xs + $space-xxs !important, 3);
+@include set-gutters(padding, $space-sm !important, 4);
+@include set-gutters(padding, $space-md !important, 5);
+@include set-gutters(padding, 0 !important, 0);
+
+
+@media (min-width: $screen-sm-min) {
+    @include set-gutters(margin, $space-xxs !important, 1, sm);
+    @include set-gutters(margin, $space-xs !important, 2, sm);
+    @include set-gutters(margin, $space-xs + $space-xxs !important, 3, sm);
+    @include set-gutters(margin, $space-sm !important, 4, sm);
+    @include set-gutters(margin, $space-md !important, 5, sm);
+    @include set-gutters(margin, 0 !important, 0, sm);
+
+    @include set-gutters(padding, $space-xxs !important, 1, sm);
+    @include set-gutters(padding, $space-xs !important, 2, sm);
+    @include set-gutters(padding, $space-xs + $space-xxs !important, 3, sm);
+    @include set-gutters(padding, $space-sm !important, 4, sm);
+    @include set-gutters(padding, $space-md !important, 5, sm);
+    @include set-gutters(padding, 0 !important, 0, sm);
+}
+@media (min-width: $screen-md-min) {
+    @include set-gutters(margin, $space-xxs !important, 1, md);
+    @include set-gutters(margin, $space-xs !important, 2, md);
+    @include set-gutters(margin, $space-xs + $space-xxs !important, 3, md);
+    @include set-gutters(margin, $space-sm !important, 4, md);
+    @include set-gutters(margin, $space-md !important, 5, md);
+    @include set-gutters(margin, 0 !important, 0, md);
+
+    @include set-gutters(padding, $space-xxs !important, 1, md);
+    @include set-gutters(padding, $space-xs !important, 2, md);
+    @include set-gutters(padding, $space-xs + $space-xxs !important, 3, md);
+    @include set-gutters(padding, $space-sm !important, 4, md);
+    @include set-gutters(padding, $space-md !important, 5, md);
+    @include set-gutters(padding, 0 !important, 0, md);
+}
+@media (min-width: $screen-lg-min) {
+    @include set-gutters(margin, $space-xxs !important, 1, lg);
+    @include set-gutters(margin, $space-xs !important, 2, lg);
+    @include set-gutters(margin, $space-xs + $space-xxs !important, 3, lg);
+    @include set-gutters(margin, $space-sm !important, 4, lg);
+    @include set-gutters(margin, $space-md !important, 5, lg);
+    @include set-gutters(margin, 0 !important, 0, lg);
+
+    @include set-gutters(padding, $space-xxs !important, 1, lg);
+    @include set-gutters(padding, $space-xs !important, 2, lg);
+    @include set-gutters(padding, $space-xs + $space-xxs !important, 3, lg);
+    @include set-gutters(padding, $space-sm !important, 4, lg);
+    @include set-gutters(padding, $space-md !important, 5, lg);
+    @include set-gutters(padding, 0 !important, 0, lg);
+}
+@media (min-width: $screen-xl-min) {
+    @include set-gutters(margin, $space-xxs !important, 1, xl);
+    @include set-gutters(margin, $space-xs !important, 2, xl);
+    @include set-gutters(margin, $space-xs + $space-xxs !important, 3, xl);
+    @include set-gutters(margin, $space-sm !important, 4, xl);
+    @include set-gutters(margin, $space-md !important, 5, xl);
+    @include set-gutters(margin, 0 !important, 0, xl);
+
+    @include set-gutters(padding, $space-xxs !important, 1, xl);
+    @include set-gutters(padding, $space-xs !important, 2, xl);
+    @include set-gutters(padding, $space-xs + $space-xxs !important, 3, xl);
+    @include set-gutters(padding, $space-sm !important, 4, xl);
+    @include set-gutters(padding, $space-md !important, 5, xl);
+    @include set-gutters(padding, 0 !important, 0, xl);
+}
+
+.container {
+    max-width: 100%;
+
+    @media (min-width: $screen-lg-min) {
+        max-width: 100%;
+        @include padding(null $space-md);
+    }
+    @media (min-width: 1400px) {
+        max-width: 1382px;
+    }
+    @media (min-width: 1600px) {
+        max-width: 1582px;
+    }
+    @media (min-width: 1800px) {
+        max-width: 1782px;
+    }
+}
+
+.col, .col-sm, .col-md, .col-lg, .col-xl { min-width: 1px; }
+
+%no-radius {
+    border-radius: 0;
+}
+
+
+/* TYPOGRAPHY
+ * -------------------------- */
+
+$max: 4;
+@for $i from 1 through $max {
+    .display-#{$i} {
+        font-size: modular-scale(($max + 6));
+        $max: $max - 1;
+    }
+}
+
+[class*="display-"] {
+    font-weight: $font-bold;
+}
+
+.lead {
+    @include margin(null null $space-sm);
+}
+
+.tooltip {
+    line-height: $line-height-heading;
+
+    &-inner {
+        @include padding(.35rem null);
+    }
+}
+
+
+
+
+/* BUTTON
+ * -------------------------- */
+
+
+.btn {
+    border-width: 2px;
+    border-radius: $space-xxs;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all .3s;
+    @include padding(null $space-xs);
+
+    @media (min-width: $screen-md-min) {
+        @include padding(null ($space-xs * 1.5));
+    }
+
+    &-link {
+        text-transform: none;
+        font-weight: $font-regular;
+        color: $color-primary-lt;
+
+        #{$_link-hover} {
+            color: $color-primary-ltr;
+        }
+    }
+}
+
+/* PRIMARY */
+.btn-outline-primary {
+    @include btn-style($color-primary-lt, $color-primary-lt, null);
+
+    #{$_btn-fullstate} {     // HOVER, FOCUS, ACTIVE, ETC
+        @extend .btn-primary:hover;
+    }
+}
+
+.btn-primary {
+    @include btn-style-full($bd-color:$color-primary);
+}
+
+
+/* SECONDARY */
+.btn-outline-secondary {
+    @include btn-style($color-secondary, $color-secondary, null);
+
+    #{$_btn-fullstate} {     // HOVER, FOCUS, ACTIVE, ETC
+        @extend .btn-secondary:hover;
+    }
+}
+
+.btn-secondary {
+    @include btn-style-full($color-secondary, white);
+}
+
+
+
+/* CARD / LIST GROUP
+ * -------------------------- */
+
+.card {
+    @extend %no-radius;
+}
+
+
+
+/* FORM
+ * -------------------------- */
+.form-control,
+.input-group-lg>.form-control, .input-group-lg>.input-group-append>.btn, .input-group-lg>.input-group-append>.input-group-text, .input-group-lg>.input-group-prepend>.btn, .input-group-lg>.input-group-prepend>.input-group-text {
+    @extend %no-radius;
+}
+
+.form-control {
+    border-width: 2px;
+
+    &, &:focus {
+        background-color: transparent;
+    }
+}
+
+.form-control {
+    color: $color-secondary-ltr;
+
+    &:focus {
+        color: $color-text;
+    }
+}
+
+.form-group, .label-floated {
+    label {
+        color: $color-secondary-lt;
+    }
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before,
+.custom-control-input:checked~.custom-control-label::before {
+    background-color: $color-primary;
+}
+
+.custom-control-input:focus~.custom-control-label::before {
+    box-shadow: 0 0 0 1px #fff;
+}
+
+.form-text {
+    line-height: $line-height-heading;
+}
+
+.bs-tooltip-bottom {
+    top: .2rem !important;
+}
+
+
+/* CLOSE
+ * -------------------------- */
+
+.close {
+    float: none;
+    font-size: 2rem;
+    opacity: 1;
+    font-family: $font-family-highlight;
+    line-height: .5;
+    color: $color-secondary-ltr;
+    text-shadow: 0 1px 0 black;
+    transition: all .3s;
+
+    &:not(:disabled):not(.disabled) {
+        #{$_link-hover} {
+            color: $color-primary;
+            opacity: 1;
+        }
+    }
+}
+
+
+/* UTILITIES
+ * -------------------------- */
+
+.text-primary {
+    color: $color-primary-lt !important;
+}
+
+
+/* ==========================================================================
+   MODIFICACOES DE PLUGINS
+   ========================================================================== */
+
+
+/* SLICK
+ * -------------------------- */
+
+.slick-slide img {
+    display: inline-block;
+}
+
+.slick-dots {
+    z-index: 15;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    list-style: none;
+    @include margin($space-xs $space-xs 0);
+    @include padding(null null null 0);
+
+    @media (min-width: $screen-sm-min) {
+        @include margin(null 15% null);
+
+    }
+
+    li {
+        text-indent: -999px;
+        background-color: $color-secondary;
+        cursor: pointer;
+        transition: all .3s;
+        @include prefixer(flex, 0 1 auto, ms);
+        @include size(1.375rem, .375rem);
+        @include margin(null .25rem);
+        @include position(relative, null);
+
+        &.slick-active {
+            @extend %slick-dots-active;
+        }
+    }
+
+    button {
+        display: none;
+    }
+}
+
+%slick-dots-active {
+    cursor: default;
+    background-color: white;
+}
+
+.slick-track {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+
+    .slick-slide {
+        height: auto;       
+    }
+}
+
+.slick-arrow {
+    font-size: $font-size-h1 * 2;
+    cursor: pointer;
+    @include padding(null $space-xs);
+
+    &, &:not([href]):not([tabindex]) {
+        color: white;
+    }
+
+    &.slick-disabled {
+        display: none !important;
+    }
+}
+
+
+
+/* ==========================================================================
+   UTILITIES PROPRIOS
+   ========================================================================== */
+
+.i-arrow-up, .i-arrow-down,
+.i-arrow-left, .i-arrow-right {
+    background: {
+        image: url('../images/icon-arrow-right-wh.png');
+        repeat: no-repeat;
+        position: center;
+        size: contain;
+    }
+    display: inline-block;
+}
+
+.i-arrow-up, .i-arrow-down {
+    @include size(4.1875rem, 2.5rem);
+}
+
+.i-arrow-left, .i-arrow-right {
+    @include size(2.5rem, 4.1875rem);
+}
+
+.i-arrow-up {
+    transform: rotate(-90deg);
+}
+
+.i-arrow-down {
+    transform: rotate(90deg);
+}
+
+.i-arrow-left {
+    @extend .invert-x;
+}
+
+.invert-x {
+    transform: scaleX(-1);
+}
+
+.invert-colors {
+    filter: invert(1);
+}
+
+

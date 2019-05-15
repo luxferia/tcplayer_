@@ -1,0 +1,85 @@
+/* ==========================================================================
+   GLOBAL
+   ========================================================================== */
+
+/**
+ * Alguns componentes do Bootstrap estao sendo sobrescritos aqui, nao foi feita a 
+ * separacao.
+ **/
+
+
+body {
+    font: {
+        family: $font-family-base;
+    }
+    color: $color-text;
+    background-color: $color-secondary-dkr;
+}
+
+a {
+    color: $color-primary-lt;
+    transition: all 0.3s;
+
+    #{$_link-hover} {
+        text-decoration: none;
+        color: $color-primary-ltr;
+    }
+}
+
+/* Todas as imagens estao responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    border: none;
+}
+
+#main {
+    overflow-x: hidden;
+    @include padding(null null $space-lg );
+}
+
+
+/* TIPOGRAFIA
+ * -------------------------- */
+
+b, strong {
+    font-weight: $font-bold;
+}
+
+small, .small {
+    font-size: $font-size-small-perc;
+}
+
+big, .big {
+    font-size: $font-size-big-perc;
+}
+
+abbr[title], abbr[data-original-title] {
+    border-bottom: none;
+    text-decoration: none;
+}
+
+.mark, mark {
+    @include padding(.1em null);
+    background-color: rgba(black, .15);
+    color: inherit;
+}
+
+$h-font-size-list: $font-size-h1, $font-size-h2, $font-size-h3, $font-size-h4, $font-size-h5, $font-size-h6;
+
+@for $i from 1 through length($h-font-size-list) {
+    h#{$i}, .h#{$i} {
+        font-size: nth($h-font-size-list, $i)
+    }
+}
+
+@media (max-width: $screen-xs-max) {
+    $max: 6;
+    @for $i from 1 through $max {
+        h#{$i}, .h#{$i} {
+            font-size: modular-scale($max, 1rem 1.125rem, $major-third);
+            $max: $max - 1;
+        }
+    }
+}

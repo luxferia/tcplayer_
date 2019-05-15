@@ -1,0 +1,132 @@
+// ========================================================================== //
+//	VARIAVEIS
+// ========================================================================== //
+
+// bourbon config
+$bourbon: (
+	"modular-scale-base": 1rem,
+	"modular-scale-ratio": $minor-third,
+);
+
+
+//* MEDIA QUERIES BREAKPOINTS *//
+// Define os breakpoints que mudam o layout, adaptando a diversos tamanhos de
+// de tela.
+// Extra small screen / phone
+// Small screen / phone
+// Medium screen / tablet
+// Large screen / desktop
+// Extra Large screen / wide desktop
+
+// Valores de base
+$screen-sm:             576px;
+$screen-md:             768px;
+$screen-lg:             992px;
+$screen-xl:             1200px;
+
+// Valores minimos
+$screen-sm-min:         $screen-sm;
+$screen-md-min:			$screen-md;
+$screen-lg-min:         $screen-lg;
+$screen-xl-min:         $screen-xl;
+
+// Valores maximos
+// Media queries nao sobrepoem quando requeridas, colocar um maximo
+//$screen-md-max:         ($screen-lg-min - .1); // 
+$screen-xs-max:         ($screen-sm-min - 1px); // 
+$screen-sm-max:         ($screen-md-min - 1px); // 
+$screen-md-max:         ($screen-lg-min - 1px); //
+$screen-lg-max:         ($screen-xl-min - 1px); // 
+
+
+//* MEDIDA PADRAO *//
+$space-base: 	1rem;				// 16px || 18px
+
+$space-xxs: 	$space-base / 2;			
+$space-xs: 		$space-base; 		
+$space-sm: 		$space-xs * 2;		
+$space-md: 		$space-xs * 3;		
+$space-lg: 		$space-xs * 4; 		
+
+
+//* TIPOGRAFIA *//
+
+$line-height-base:		modular-scale(1, 1, $perfect-fifth);	// padrao da altura da linha
+$line-height-heading:	modular-scale(1, 1);	// altura da linha para titulos
+$line-height-small:		modular-scale(-1, 1);			// altura da linha menor
+$line-height-big:		modular-scale(3, 1);	// altura da linha maior
+
+// peso
+$font-light: 			300; 	// fonte fina 
+$font-regular: 			400;	// fonte normal
+$font-medium: 			500;	// fonte normal
+$font-bold: 			700;	// fonte grossa
+$font-bolder: 			900;	// fonte mais grossa
+
+// font
+$font-family-base:		"Montserrat", sans-serif; 		// fonte padrao
+$font-family-heading:	 $font-family-base;			// para titulos
+$font-family-highlight:	 $font-family-base; 			// destaque
+
+//* TAMANHO DE FONTES *//
+$font-size-base: 		1rem;
+$font-size-big: 		modular-scale(1);
+$font-size-bigger: 		modular-scale(2);
+$font-size-big-perc: 	115%;
+$font-size-small:		modular-scale(-1);
+$font-size-smaller:		modular-scale(-2);
+$font-size-small-perc:	85%;
+
+// tamanho default
+$font-size-h1: 	modular-scale(6);
+$font-size-h2: 	modular-scale(5);
+$font-size-h3: 	modular-scale(4); 
+$font-size-h4: 	modular-scale(3); 
+$font-size-h5: 	modular-scale(2);
+$font-size-h6: 	modular-scale(1);
+
+
+//* CORES *//
+$color-brand: 			#e53c33;
+
+$gray-dk:				#3d3d4d;
+$gray:					lighten($gray-dk, 20%); 
+$gray-lt:            	lighten($gray-dk, 50%);  
+$gray-ltr:          	lighten($gray-dk, 67%); 
+$gray-dkr:				darken($gray-dk, 15%);
+
+$color-text:				white;	
+
+// cor primaria
+$color-primary: 			$color-brand;
+$color-primary-lt:   		lighten($color-brand, 10.1%); //
+$color-primary-ltr:   		lighten($color-brand, 40%);
+$color-primary-dk:  		darken($color-brand, 7%);
+$color-primary-dkr:  		darken($color-brand, 14%);
+
+@debug "cor primaria 	#{$color-primary}"; 
+@debug "cor primaria lt 	#{$color-primary-lt}";
+@debug "cor primaria ltr 	#{$color-primary-ltr}";
+@debug "cor primaria dk 	#{$color-primary-dk}";
+@debug "cor primaria dkr 	#{$color-primary-dkr}";
+
+
+$color-secondary: 			$gray;
+$color-secondary-lt:   		$gray-lt;
+$color-secondary-ltr:   	$gray-ltr;
+$color-secondary-dk:  		$gray-dk;
+$color-secondary-dkr:  		$gray-dkr;
+
+@debug "cor cinza 	#{$gray}"; 
+@debug "cor cinza lt 	#{$gray-lt}";
+@debug "cor cinza ltr 	#{$gray-ltr}";
+@debug "cor cinza dk 	#{$gray-dk}";
+@debug "cor cinza dkr 	#{$gray-dkr}";
+
+
+// others
+$_link: '&:link, &:visited, &:active'; // link
+$_link-hover: '&:focus, &:hover';		// link hover
+$_btn-active: '&:active, &.active';		// btn hover
+$_btn-active-hover: '&:active:hover, &.active:hover';		// btn hover
+$_btn-fullstate: '#{$_link-hover}, &.focus, #{$_btn-active}, #{$_btn-active-hover}, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active';

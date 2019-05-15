@@ -1,0 +1,458 @@
+/* ==========================================================================
+   COMPONENTES PROPRIOS
+   ========================================================================== */
+
+
+/* ==========================================================================
+   MODULOS PROPRIOS
+   ========================================================================== */
+
+
+/* WEBDOOR
+ * -------------------------- */
+
+.webdoor {
+    color: white;
+
+    &-item {
+        background: {
+            color: black;
+            position: center top;
+            repeat: no-repeat;
+            size: contain;
+        }
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        @include position(relative, null);
+        @include margin(null null 0);
+        @include padding(50% null 3rem);
+
+        &:before {
+            background: -moz-linear-gradient(transparent 16%, black 28%);
+            background: -webkit-linear-gradient(transparent 16%, black 28%);
+            background: linear-gradient(transparent 16%, black 28%);
+            @include before-after02;
+        }
+
+        > .container {
+            z-index: 1;
+            -ms-flex-item-align: center;
+            align-self: center;
+            @include position(relative, null);
+        }
+    }
+
+    &-medium, &-big, &-full {
+        .webdoor-item {
+            min-height: 100vh;
+        }
+    }
+
+    @media (min-width: $screen-sm-min) {
+        &-item {
+            background: {
+                position: center;
+                size: cover;
+            }
+            @include padding(4rem null);
+
+            &:before {
+                background: -moz-linear-gradient(left, black 33%, transparent 50%);
+                background: -webkit-linear-gradient(left, black 33%, transparent 50%);
+                background: linear-gradient(to right, black 33%, transparent 50%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=1 );
+            }
+        }
+
+        &-medium {
+            .webdoor-item {
+                min-height: 33.4375rem;
+            }
+        }
+
+        &-big {
+            .webdoor-item {
+                min-height: 46.68rem;
+            }
+        }
+
+        &-full {
+            .webdoor-item {
+                min-height: 100vh;
+            }
+        }
+        
+    }
+}
+
+
+/* OVERLAY
+ * -------------------------- */
+
+%overlay {
+    display: -ms-flexbox;
+    display: flex;
+    // -ms-flex-direction: column;
+    // flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    color: white;
+    background-color: $color-secondary-lt;
+    background-clip: border-box;
+    @include position(relative, null);
+}
+
+%overlay-img {
+    background: {
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+    }
+}
+
+%overlay-body {
+    transition: all .3s;
+    text-shadow: 1px 1px 1px rgba(black, .65);
+    @include position(absolute, 0);
+}
+
+%overlay-gradient-before {
+    &:before {
+        background-color: rgba(black, .65);
+        background: linear-gradient(to bottom, transparent 0%, transparent 40%,rgba(black,0.65) 100%);
+        transition: all .3s;
+        @include before-after02;
+    }
+}
+
+%overlay-hover {
+    opacity: 0;
+    transition: all .3s;
+}
+
+%overlay-hover-before {
+    &:before {
+        background: rgba(black, .65);
+        background: linear-gradient(to bottom, rgba(black,.65), rgba(black,.65));
+    }
+}
+
+%overlay-opacity-100 {
+    opacity: 1;
+}
+
+.overlay {
+    @extend %overlay;
+
+    &-img:not(img) {
+        @extend %overlay-img;
+    }
+
+    img.overlay-img {
+        width: 100%;
+    }
+
+    &-body {
+        @extend %overlay-body;
+        @include padding($space-xs);
+    }
+
+    &:not(.overlay-gradient) {
+        .overlay-body {
+            background-color: rgba(black, .5);
+        }
+    }
+
+    &-gradient {
+        @extend %overlay-gradient-before;
+    }
+
+    &-bottom {
+        top: auto;
+    }
+
+    &-top {
+        bottom: auto;
+    }
+
+    &-hover {
+        .overlay-body {
+            @extend %overlay-hover;
+        }
+
+        #{$_link-hover} {
+            @extend %overlay-hover-before;
+
+            .overlay-body {
+                @extend %overlay-opacity-100;
+            }
+        }
+    }
+}
+
+
+/* POSTER
+ * -------------------------- */
+
+.poster {
+    @extend %overlay;
+    @extend %overlay-img;
+    @include padding(null null 55%);
+
+    &-body {
+        @extend %overlay-body;
+        @extend %overlay-hover;
+        display: -ms-flexbox;
+        display: flex;
+        z-index: 3;
+        @include padding($space-xs);
+    }
+
+    #{$_link-hover} {
+        .poster-body {
+            @extend %overlay-opacity-100;
+            background-color: rgba(black, .65);
+            background: linear-gradient(to bottom, transparent 0%, rgba(black,.9) 100%);
+        }
+    }
+
+    &-alt {
+        @include padding(null null 148.16%);
+
+    }
+}
+
+
+/* SHOWCASE CAROUSEL
+ * -------------------------- */
+
+.showcase-carousel {  
+    &, &-alt {
+        z-index: 9;
+
+        .i-arrow-down, .i-arrow-left, .i-arrow-right {
+            @include size(2.09rem, 1.25rem);
+            -webkit-filter: drop-shadow(0 1px 0 rgba(black, .65));
+            filter: drop-shadow(0 1px 0 rgba(black, .65));
+        }
+
+        .i-arrow-left, .i-arrow-right {
+            @include size(2.25rem, 2.75rem);
+            -webkit-filter: drop-shadow(0 1px 0 rgba(black, .65));
+            filter: drop-shadow(0 1px 0 rgba(black, .65));
+        }
+
+        .slick-dots {
+            -ms-flex-pack: flex-end;
+            justify-content: flex-end;
+            @include margin(0 null);
+            @include position(absolute, -2rem 0 null);
+
+            @media (min-width: $screen-sm-min) {
+                @include margin(null 2rem null null);
+            }
+        }
+
+        .slick-arrow {
+            z-index: 9;
+            width: 4.25rem;
+            text-align: center;
+            text-shadow: 0 1px 0 black;
+            @include position(absolute, 0 null);
+
+            &.slick-left {
+                @include position(null, null null null 0);
+            }
+
+            &.slick-right {
+                @include position(null, null 0 null null);
+            }
+
+            [class*="i-arrow"] {
+                transition: all .3s;
+                @include position(absolute, 0);
+                @include margin(auto);
+            }
+
+            #{$_link-hover} {
+                [class*="i-arrow"] {
+                    transform: scale(1.05);
+                    background: {
+                        image: url('../images/icon-arrow-right-rd.png');
+                    }
+                    // color: $color-primary-lt;
+                }
+
+                .i-arrow-left {
+                    transform: scaleX(-1) scale(1.05);
+                }
+            }
+        }
+
+        .slick-slide {
+            cursor: pointer;
+            @include padding(1px);
+        }
+
+        .poster {
+            width: 100%;
+            transition: all .3s;
+            background-color: $color-secondary-dk;
+            border: 1px solid $color-secondary-dkr;
+        }
+
+        .item {
+            display: block !important;
+            @include position(relative, null);
+
+            &:before, &:after {
+                content: '';
+                display: none;
+                @include position(absolute, null);
+            }
+
+            &:before {
+                z-index: 1;
+                border: 4px solid white;
+                box-shadow: 0 4px 4px rgba(black, .2);
+                @include position(null, 1px);
+            }
+
+            &:after {
+                z-index: 2;
+                @include triangle("down", 2rem, .5rem, white);
+                @include margin(null null null -1rem);
+                @include position(absolute, null null -6px 50%);
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            &.active {
+                @extend %movie-active;
+            }
+        }
+    }
+
+    & {
+        .slick-list {
+            overflow: visible;
+        }
+
+        .slick-slide {
+            @include position(relative, null);
+        }
+
+        %movie-active {
+            #{$_link-hover} {
+                cursor: default;
+
+                .poster {
+                    transform: scale(1);
+                    z-index: 0;
+
+                    &-body {
+                        display: none;
+                    }
+                }
+
+            }
+
+            &:before, &:after {
+                display: block;
+            }
+        }
+
+        .item {
+            #{$_link-hover} {
+                .poster {
+                    transform: scale(1.3);
+                    border-color: black;
+                    z-index: 10;
+                }
+            }
+        }
+    }
+}
+
+.webdoor-showcase-carousel {
+    @include position(relative, null);
+
+    &, .webdoor {
+        display: none;
+    }
+
+    .close {
+        z-index: 1;
+        font-size: 4rem;
+        @include padding($space-xs);
+        @include position(absolute, 0 0 null null);
+
+        #{$_link-hover} {
+            transform: scale(1.3);
+        }
+    }
+} 
+
+
+
+/* LABELS FLUTUATES (FORM)
+ * -------------------------- */
+ 
+[class="bg-dark"] {
+    .form-control {
+        color: white;
+        border-color: rgba(white, .5);
+
+        &:focus {
+            color: white;
+            border-color: $color-primary;
+        }
+    }
+}
+
+.label-floated {
+    @include position(relative, null);
+
+    &.form-group {
+        @include margin(null null $space-sm);
+    }
+
+    label {
+        @include position(absolute, null null 0 0);
+        @extend %transition-default;
+    }
+
+    .form-control {
+        @include padding(null 0);
+
+        &, &:focus {
+            @include border-color(transparent transparent null transparent);
+        }
+
+        &:focus {
+            box-shadow: none;
+            @include border-color(null null $color-primary);
+        }
+    }
+
+    textarea.form-control {
+        height: 2.5rem;
+    }
+
+    &.filled {
+        label {
+            bottom: auto;
+            top: $space-xs * -1;
+            font-size: $font-size-small;
+            color: darken($color-secondary-lt, 17%);
+        }
+
+        textarea.form-control {
+            min-height: 4.5rem;
+        }
+    }
+}
