@@ -1,86 +1,27 @@
 $( document ).ready( function() {
 
 	$('.showcase-carousel').slick({
-		arrows: true,
-		dots: true,
-		infinite: false,
-		slidesToShow: 4,
-		slidesToScroll: 4,
-		prevArrow: '<a role="button" class="slick-left"><span class="i-arrow-left"></span><span class="sr-only">Anterior</span></a>',
-		nextArrow: '<a role="button" class="slick-right"><span class="i-arrow-right"></span><span class="sr-only">Próximo</span></a>',
-		responsive: [{
-			breakpoint: 1200,
-			settings: {
-				slidesToShow: 3,
-				slidesToScroll: 3
-			}
-		},
-		{
-			breakpoint: 992,
-			settings: {
-				slidesToShow: 3,
-				slidesToScroll: 3
-			}
-		},
-		{
-			breakpoint: 768,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 2
-			}
-		},
-		{
-			breakpoint: 432,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-			}
-		}]
-	});
-
-	$('.showcase-carousel-col3').slick({
-		arrows: false,
-		dots: true,
-		infinite: false,
-		slidesToShow: 3,
-		slidesToScroll: 3,
-		responsive: [
-		{
-			breakpoint: 768,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 2
-			}
-		},
-		{
-			breakpoint: 432,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-			}
-		}]
-	});
-
-	$('.showcase-carousel-col4').slick({
 		arrows: false,
 		// centerMode: true,
 		dots: true,
 		infinite: false,
-		slidesToShow: 4,
-		slidesToScroll: 4,
+		slidesToShow: 5,
+		slidesToScroll: 5,
+		prevArrow: '<a role="button" class="slick-left"><span class="fas fa-chevron-left"></span><span class="sr-only">Anterior</span></a>',
+		nextArrow: '<a role="button" class="slick-right"><span class="fas fa-chevron-right"></span><span class="sr-only">Próximo</span></a>',
 		responsive: [
+		// {
+		// 	breakpoint: 992,
+		// 	settings: {
+		// 		slidesToShow: 3,
+		// 		slidesToScroll: 3
+		// 	}
+		// },
 		{
 			breakpoint: 768,
 			settings: {
 				slidesToShow: 3,
 				slidesToScroll: 3
-			}
-		},
-		{
-		breakpoint: 576,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 2
 			}
 		},
 		{
@@ -91,6 +32,62 @@ $( document ).ready( function() {
 			}
 		}]
 	});
+
+	// $('.showcase-carousel-col3').slick({
+	// 	arrows: false,
+	// 	dots: true,
+	// 	infinite: false,
+	// 	slidesToShow: 3,
+	// 	slidesToScroll: 3,
+	// 	responsive: [
+	// 	{
+	// 		breakpoint: 768,
+	// 		settings: {
+	// 			slidesToShow: 2,
+	// 			slidesToScroll: 2
+	// 		}
+	// 	},
+	// 	{
+	// 		breakpoint: 432,
+	// 		settings: {
+	// 			slidesToShow: 1,
+	// 			slidesToScroll: 1
+	// 		}
+	// 	}]
+	// });
+
+	// $('.showcase-carousel-col5').slick({
+	// 	arrows: false,
+	// 	// centerMode: true,
+	// 	dots: true,
+	// 	infinite: false,
+	// 	slidesToShow: 5,
+	// 	slidesToScroll: 5,
+	// 	prevArrow: '<a role="button" class="slick-left"><span class="fas fa-chevron-left"></span><span class="sr-only">Anterior</span></a>',
+	// 	nextArrow: '<a role="button" class="slick-right"><span class="fas fa-chevron-right"></span><span class="sr-only">Próximo</span></a>',
+	// 	responsive: [
+	// 	{
+	// 		breakpoint: 768,
+	// 		settings: {
+	// 			slidesToShow: 3,
+	// 			slidesToScroll: 3
+	// 		}
+	// 	},
+	// 	{
+	// 	breakpoint: 576,
+	// 		settings: {
+	// 			slidesToShow: 2,
+	// 			slidesToScroll: 2
+	// 		}
+	// 	},
+	// 	{
+	// 		breakpoint: 432,
+	// 		settings: {
+	// 			slidesToShow: 1,
+	// 			slidesToScroll: 1
+	// 		}
+	// 	}]
+	// });
 
 	$('.showcase-carousel .item').on("click", function(e) {
 		e.preventDefault();

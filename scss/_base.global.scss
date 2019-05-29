@@ -17,12 +17,11 @@ body {
 }
 
 a {
-    color: $color-primary-lt;
+    color: hsla(0,0,92%,1);
     transition: all 0.3s;
 
     #{$_link-hover} {
-        text-decoration: none;
-        color: $color-primary-ltr;
+        color: white;
     }
 }
 

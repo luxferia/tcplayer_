@@ -1,203 +1,110 @@
-<div class="py-5"></div>
+<section id="secao-webdoor" class="section-webdoor webdoor">
+    <div class="webdoor-item">
+        <div class="container content-wrapper pb-5">
+            <div class="row">
+                <div class="col-md-7 col-lg-6 offset-lg-1 pt-md-5">
+                    <h2 class="h1 mt-lg-5">Filmes exclusivos dos maiores estúdios é <span class="text-primary">só dar um play</span></h2>
+                    <div class="h6 pr-lg-5">Curta 7 dias grátis, assine por R$ 37,90 / mês e cancele quando quiser.</div>
 
-<section class="section-showcase">
-	<div class="container py-5 pb-md-2">
-		<h2 class="h5 mb-sm-0 text-uppercase">Lançamentos</h2>
-	</div>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-primary btn-lg" data-after-text="Cadastre-se">Experimente grátis <span class="fas fa-chevron-right ml-2"></span></a>
+                    </div>
+                </div><!-- / .col -->
+            </div><!-- / .row -->
+        </div><!-- / .container -->
+    </div><!-- / .webdoor-item -->
 
-	<div class="showcase-carousel-alt showcase-carousel-col4" id="showcase-carousel02">
-		<a href="#" class="item">
-			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
-				<div class="poster-body text-center">
-					<div class="align-self-end w-100">
-						<span class="i-arrow-down"></span>
-					</div>
-				</div>
-			</div>
-		</a>
+    <div class="container">
+    	<div class="showcase-carousel showcase-carousel-col5" id="showcase-carousel02">
+    		<a href="#" class="item">
+    			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
+    				<div class="poster-body text-center">
+    					<div class="align-self-center w-100">
+    						<span class="fas fa-play fa-3x"></span>
+    					</div>
+    				</div>
+    			</div>
+    		</a>
 
-		<a href="#" class="item">
-			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
-				<div class="poster-body text-center">
-					<div class="align-self-end w-100">
-						<span class="i-arrow-down"></span>
-					</div>
-				</div>
-			</div>
-		</a>
+    		<a href="#" class="item">
+    			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
+    				<div class="poster-body text-center">
+    					<div class="align-self-center w-100">
+    						<span class="fas fa-play fa-3x"></span>
+    					</div>
+    				</div>
+    			</div>
+    		</a>
 
-		<a href="#" class="item">
-			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
-				<div class="poster-body text-center">
-					<div class="align-self-end w-100">
-						<span class="i-arrow-down"></span>
-					</div>
-				</div>
-			</div>
-		</a>
+    		<a href="#" class="item">
+    			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
+    				<div class="poster-body text-center">
+    					<div class="align-self-center w-100">
+    						<span class="fas fa-play fa-3x"></span>
+    					</div>
+    				</div>
+    			</div>
+    		</a>
 
-		<a href="#" class="item">
-			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
-				<div class="poster-body text-center">
-					<div class="align-self-end w-100">
-						<span class="i-arrow-down"></span>
-					</div>
-				</div>
-			</div>
-		</a>
+    		<a href="#" class="item">
+    			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
+    				<div class="poster-body text-center">
+    					<div class="align-self-center w-100">
+    						<span class="fas fa-play fa-3x"></span>
+    					</div>
+    				</div>
+    			</div>
+    		</a>
 
-		<a href="#" class="item">
-			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
-				<div class="poster-body text-center">
-					<div class="align-self-end w-100">
-						<span class="i-arrow-down"></span>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div><!-- / .showcase-carousel -->
+    		<a href="#" class="item">
+    			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
+    				<div class="poster-body text-center">
+    					<div class="align-self-center w-100">
+    						<span class="fas fa-play fa-3x"></span>
+    					</div>
+    				</div>
+    			</div>
+    		</a>
+
+    		<a href="#" class="item">
+    			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
+    				<div class="poster-body text-center">
+    					<div class="align-self-center w-100">
+    						<span class="fas fa-play fa-3x"></span>
+    					</div>
+    				</div>
+    			</div>
+    		</a>
+    	</div><!-- / .showcase-carousel -->
+    </div><!-- / .container -->
+</section><!-- / .section-webdoor -->
+
+<section class="content-wrapper">
+	<div class="container">
+		<div class="text-center">
+			<h2 class="h6 text-uppercase">Dispositivos</h2>
+			<div class="h1">O melhor catálogo. <br>Em todas as telas.</div>
+		</div>
+
+		<div class="row h6">
+			<div class="col-md-5 offset-md-1">
+				<p class="h4 mb-5">Assista na TV</p>
+				<ul class="fa-ul">
+					<li class="mb-2"><span class="fa-li" ><i class="fas fa-tv"></i></span>Smart TVs</li>
+					<li class="mb-2"><span class="fa-li" ><i class="fab fa-xbox"></i></span>Xbox One</li>
+					<li class="mb-2"><span class="fa-li" ><i class="fab fa-chromecast"></i></span>ChromeCast</li>
+				</ul>
+			</div><!-- / .col -->
+
+			<div class="col-md-5 offset-md-6">
+				<p class="h4 mb-5">Ou onde quiser</p>
+				<ul class="fa-ul">
+					<li class="mb-2"><span class="fa-li" ><i class="fab fa-android"></i></span>Android</li>
+					<li class="mb-2"><span class="fa-li" ><i class="fab fa-apple"></i></span>iOS</li>
+					<li class="mb-2"><span class="fa-li" ><i class="fas fa-laptop"></i></span>PC</li>
+				</ul>
+			</div><!-- / .col -->
+		</div><!-- / .row -->
+	</div><!-- / .container -->
 </section>
 
-<section class="section-showcase">
-	<div class="container py-5 pb-md-2">
-		<h2 class="h5 text-uppercase mb-sm-0">Populares</h2>
-	</div>
-
-	<div class="showcase-carousel" id="showcase-carousel01">
-		<a href="#movie-webdoor01" class="item">
-			<div class="poster" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
-				<div class="poster-body text-center">
-					<div class="align-self-end w-100">
-						<span class="i-arrow-down"></span>
-					</div>
-				</div>
-			</div>
-		</a>
-
-		<a href="#movie-webdoor02" class="item">
-			<div class="poster" style="background-image: url('images/movies/movie02-poster-thumb.jpg');">
-				<div class="poster-body text-center">
-					<div class="align-self-end w-100">
-						<span class="i-arrow-down"></span>
-					</div>
-				</div>
-			</div>
-		</a>
-
-		<a href="#movie-webdoor03" class="item">
-			<div class="poster" style="background-image: url('images/movies/movie03-webdoor-thumb.jpg');">
-				<div class="poster-body text-center">
-					<div class="align-self-end w-100">
-						<span class="i-arrow-down"></span>
-					</div>
-				</div>
-			</div>
-		</a>
-
-		<a href="#movie-webdoor04" class="item">
-			<div class="poster" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
-				<div class="poster-body text-center">
-					<div class="align-self-end w-100">
-						<span class="i-arrow-down"></span>
-					</div>
-				</div>
-			</div>
-		</a>
-
-		<a class="item" href="#movie-webdoor05">
-			<div class="poster" style="background-image: url('images/movies/movie02-poster-thumb.jpg');">
-				<div class="poster-body text-center">
-					<div class="align-self-end w-100">
-						<span class="i-arrow-down"></span>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div><!-- / .showcase-carousel -->
-
-	<div class="webdoor-showcase-carousel">
-		<button type="button" class="close" aria-label="Fechar">
-			<span aria-hidden="true">&times;</span>
-		</button>
-
-		<div id="movie-webdoor01" class="webdoor webdoor-big">
-			<div class="webdoor-item" style="background-image: url('images/movies/movie01-webdoor.jpg');">
-				<div class="container">
-					<div class="row no-gutters h-100">
-						<div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 align-self-center">
-							<h2 class="border-bottom border-white pb-1"><img src="images/movies/movie01-logo.png" alt="Strangerina Things"></h2>
-							<img class="my-1" src="images/icon-ratingstars.png" aria-hidden="true" alt="">
-							<p>Após desaparecer das bancas em um evento supernatural, um grupo de amigos se reúne para descobrir a origem do sabor da Tangerina. Mal sabem eles que o segredo está muito bem escondido embaixo da terra.</p>
-							<a href="#" class="btn btn-sm btn-outline-light mt-1 mr-1 mr-sm-2 mr-lg-3">Baixar Poster</a>
-							<a href="https://www.youtube.com/watch?v=HIJQT8AnK-4" target="_blank" class="btn btn-sm btn-outline-light mt-1">Assistir</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="movie-webdoor02" class="webdoor webdoor-big">
-			<div class="webdoor-item" style="background-image: url('images/movies/movie02-webdoor.jpg');">
-				<div class="container">
-					<div class="row no-gutters h-100">
-						<div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 align-self-center">
-							<h2 class="border-bottom border-white pb-1"><img src="images/movies/movie02-logo.png" class="invert-colors" alt="Strangerina Things"></h2>
-							<img class="my-1" src="images/icon-ratingstars.png" aria-hidden="true" alt="">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id voluptatem tempore quae, cum consequatur quisquam totam, facilis illo blanditiis. Voluptatem dolores eius, quam sequi labore impedit id repellat deserunt autem.</p>
-							<a href="#" class="btn btn-sm btn-outline-light mt-1 mr-1 mr-sm-2 mr-lg-3">Baixar Poster</a>
-							<a href="https://www.youtube.com/watch?v=HIJQT8AnK-4" target="_blank" class="btn btn-sm btn-outline-light mt-1">Assistir</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="movie-webdoor03" class="webdoor webdoor-big">
-			<div class="webdoor-item" style="background-image: url('images/movies/movie03-webdoor.jpg');">
-				<div class="container">
-					<div class="row no-gutters h-100">
-						<div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 align-self-center">
-							<h2 class="border-bottom border-white pb-1"><img src="images/movies/movie03-logo.png" alt="Strangerina Things"></h2>
-							<img class="my-1" src="images/icon-ratingstars.png" aria-hidden="true" alt="">
-							<p>Após desaparecer das bancas em um evento supernatural, um grupo de amigos se reúne para descobrir a origem do sabor da Tangerina. Mal sabem eles que o segredo está muito bem escondido embaixo da terra.</p>
-							<a href="#" class="btn btn-sm btn-outline-light mt-1 mr-1 mr-sm-2 mr-lg-3">Baixar Poster</a>
-							<a href="https://www.youtube.com/watch?v=HIJQT8AnK-4" target="_blank" class="btn btn-sm btn-outline-light mt-1">Assistir</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="movie-webdoor04" class="webdoor webdoor-big">
-			<div class="webdoor-item" style="background-image: url('images/movies/movie01-webdoor.jpg');">
-				<div class="container">
-					<div class="row no-gutters h-100">
-						<div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 align-self-center">
-							<h2 class="border-bottom border-white pb-1"><img src="images/movies/movie01-logo.png" alt="Strangerina Things"></h2>
-							<img class="my-1" src="images/icon-ratingstars.png" aria-hidden="true" alt="">
-							<p>Após desaparecer das bancas em um evento supernatural, um grupo de amigos se reúne para descobrir a origem do sabor da Tangerina. Mal sabem eles que o segredo está muito bem escondido embaixo da terra.</p>
-							<a href="#" class="btn btn-sm btn-outline-light mt-1 mr-1 mr-sm-2 mr-lg-3">Baixar Poster</a>
-							<a href="https://www.youtube.com/watch?v=HIJQT8AnK-4" target="_blank" class="btn btn-sm btn-outline-light mt-1">Assistir</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="movie-webdoor05" class="webdoor webdoor-big">
-			<div class="webdoor-item" style="background-image: url('images/movies/movie02-webdoor.jpg');">
-				<div class="container">
-					<div class="row no-gutters h-100">
-						<div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 align-self-center">
-							<h2 class="border-bottom border-white pb-1"><img src="images/movies/movie02-logo.png" alt="Strangerina Things"></h2>
-							<img class="my-1" src="images/icon-ratingstars.png" aria-hidden="true" alt="">
-							<p>Após desaparecer das bancas em um evento supernatural, um grupo de amigos se reúne para descobrir a origem do sabor da Tangerina. Mal sabem eles que o segredo está muito bem escondido embaixo da terra.</p>
-							<a href="#" class="btn btn-sm btn-outline-light mt-1 mr-1 mr-sm-2 mr-lg-3">Baixar Poster</a>
-							<a href="https://www.youtube.com/watch?v=HIJQT8AnK-4" target="_blank" class="btn btn-sm btn-outline-light mt-1">Assistir</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>

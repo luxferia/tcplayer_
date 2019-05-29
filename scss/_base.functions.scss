@@ -86,8 +86,6 @@
 }
 
 
-
-
 @mixin before-after01 {
     content: '';
     display: inline-block;
@@ -114,26 +112,6 @@
 @mixin font-size-default {
     font-size: $font-size-base;
 }
-
-@mixin icon-font-default {
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-
-@mixin img-optimized {
-    image-rendering: optimizeSpeed;             // parar suavizacao, + veloz
-    image-rendering: -moz-crisp-edges;          // firefox
-    image-rendering: -o-crisp-edges;            // opera
-    image-rendering: -webkit-optimize-contrast; // chrome / safari
-    image-rendering: pixelated;                 // chrome
-    image-rendering: optimize-contrast;         // css3 proposto
-    -ms-interpolation-mode: nearest-neighbor;   // ie8+
-}
-
 
 //* ESPACAMENTO ZERO (padding e margin) *//
 
@@ -201,37 +179,16 @@
     }
 }
 
-//* ALINHAMENTO VERTICAL *//
-// Para alinhar verticalmente ao centro, elemento pai precisa ter uma altura. 
-
-// aplicado no elemento pai - para não criar deformacoes no elemento filho.
-@mixin preserve-3d {
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-}
-// aplicado no elemento filho
-@mixin align-middle {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-
-@function calcLinesHeight($fs, $lines, $lh) {
-    @return ($fs * $lines) * $lh;
-}
-
-@mixin linesHeight($fs:$font-size-base, $lines:1, $lh:$line-height-base, $prop:'height') {
-    #{$prop}: calcLinesHeight($fs, $lines, $lh);
-}
-
 
 // ========================================================================== //
 //	PLACEHOLDERS
 // ========================================================================== //
 
 // Alguns placeholders nada mais sao dos mixins. Para entender melhor, consultar os mixins.
+
+%transition-default {
+    transition: all 0.3s;
+}
 
 %font-size-default {
     @include font-size-default;
@@ -253,10 +210,6 @@
     @include no-float;
 }
 
-%transition-default {
-    transition: all 0.3s;
-}
-
 %no-list-style { // retira padding, margin e list-style para <ul>
 	@include no-space;
 	list-style: none;
@@ -264,39 +217,4 @@
 
 %no-border {
 	border: none;
-}
-
-%preserve-3d {
-    @include preserve-3d;
-}
-
-%align-middle {
-    @include align-middle;
-}
-
-%btn-absolute-right {
-    @include position(relative, null);
-    @include padding($space-xxs null);
-
-    > .btn {
-        text-transform: none;
-        font-size: .75rem;
-        @include position(absolute, $space-xxs 0 null null);
-    }
-}
-
-%icon-font-default {
-    @include icon-font-default;
-}
-
-%no-link-style {
-    font-style: normal !important;
-    text: {
-        decoration: none !important;
-        transform: none;
-    }
-}
-
-%img-optimized {
-    @include img-optimized;
 }

@@ -78,24 +78,6 @@
     @include set-gutters(padding, 0 !important, 0, xl);
 }
 
-.container {
-    max-width: 100%;
-
-    @media (min-width: $screen-lg-min) {
-        max-width: 100%;
-        @include padding(null $space-md);
-    }
-    @media (min-width: 1400px) {
-        max-width: 1382px;
-    }
-    @media (min-width: 1600px) {
-        max-width: 1582px;
-    }
-    @media (min-width: 1800px) {
-        max-width: 1782px;
-    }
-}
-
 .col, .col-sm, .col-md, .col-lg, .col-xl { min-width: 1px; }
 
 %no-radius {
@@ -121,16 +103,6 @@ $max: 4;
 .lead {
     @include margin(null null $space-sm);
 }
-
-.tooltip {
-    line-height: $line-height-heading;
-
-    &-inner {
-        @include padding(.35rem null);
-    }
-}
-
-
 
 
 /* BUTTON
@@ -170,7 +142,7 @@ $max: 4;
 }
 
 .btn-primary {
-    @include btn-style-full($bd-color:$color-primary);
+    @include btn-style-full($bd-color:$color-primary, $bg-color-hover:'dk');
 }
 
 
@@ -271,7 +243,7 @@ $max: 4;
  * -------------------------- */
 
 .text-primary {
-    color: $color-primary-lt !important;
+    color: $color-primary !important;
 }
 
 
@@ -306,9 +278,10 @@ $max: 4;
         text-indent: -999px;
         background-color: $color-secondary;
         cursor: pointer;
+        border-radius: .5rem;
         transition: all .3s;
         @include prefixer(flex, 0 1 auto, ms);
-        @include size(1.375rem, .375rem);
+        @include size(1.25rem, .375rem);
         @include margin(null .25rem);
         @include position(relative, null);
 
@@ -325,6 +298,7 @@ $max: 4;
 %slick-dots-active {
     cursor: default;
     background-color: white;
+    width: 1.65rem;
 }
 
 .slick-track {
@@ -357,37 +331,6 @@ $max: 4;
 /* ==========================================================================
    UTILITIES PROPRIOS
    ========================================================================== */
-
-.i-arrow-up, .i-arrow-down,
-.i-arrow-left, .i-arrow-right {
-    background: {
-        image: url('../images/icon-arrow-right-wh.png');
-        repeat: no-repeat;
-        position: center;
-        size: contain;
-    }
-    display: inline-block;
-}
-
-.i-arrow-up, .i-arrow-down {
-    @include size(4.1875rem, 2.5rem);
-}
-
-.i-arrow-left, .i-arrow-right {
-    @include size(2.5rem, 4.1875rem);
-}
-
-.i-arrow-up {
-    transform: rotate(-90deg);
-}
-
-.i-arrow-down {
-    transform: rotate(90deg);
-}
-
-.i-arrow-left {
-    @extend .invert-x;
-}
 
 .invert-x {
     transform: scaleX(-1);
