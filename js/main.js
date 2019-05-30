@@ -127,5 +127,5 @@ $( document ).ready( function() {
 
 	$(".label-floated .form-control").keydown(updateText);
 	$(".label-floated .form-control").change(updateText);
-
+	
 });

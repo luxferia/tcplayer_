@@ -1,3 +1,12 @@
+<?php 
+
+$json_movies_file = file_get_contents("populares.json");
+
+$json_output = json_decode($json_movies_file);
+
+?>
+
+
 <section id="secao-webdoor" class="section-webdoor webdoor">
     <div class="webdoor-item">
         <div class="container content-wrapper pb-5">
@@ -16,18 +25,12 @@
 
     <div class="container">
     	<div class="showcase-carousel showcase-carousel-col5" id="showcase-carousel02">
-    		<a href="#" class="item">
-    			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
-    				<div class="poster-body text-center">
-    					<div class="align-self-center w-100">
-    						<span class="fas fa-play fa-3x"></span>
-    					</div>
-    				</div>
-    			</div>
-    		</a>
+    		<?php foreach ($json_output->data as $movie) { 
+    			$movie_poster = str_replace("'", "\'", $movie->poster_m)
+    		?>
 
     		<a href="#" class="item">
-    			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
+    			<div class="poster poster-alt" style="background-image: url(<?php echo $movie_poster; ?>)">
     				<div class="poster-body text-center">
     					<div class="align-self-center w-100">
     						<span class="fas fa-play fa-3x"></span>
@@ -35,46 +38,8 @@
     				</div>
     			</div>
     		</a>
-
-    		<a href="#" class="item">
-    			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
-    				<div class="poster-body text-center">
-    					<div class="align-self-center w-100">
-    						<span class="fas fa-play fa-3x"></span>
-    					</div>
-    				</div>
-    			</div>
-    		</a>
-
-    		<a href="#" class="item">
-    			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
-    				<div class="poster-body text-center">
-    					<div class="align-self-center w-100">
-    						<span class="fas fa-play fa-3x"></span>
-    					</div>
-    				</div>
-    			</div>
-    		</a>
-
-    		<a href="#" class="item">
-    			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
-    				<div class="poster-body text-center">
-    					<div class="align-self-center w-100">
-    						<span class="fas fa-play fa-3x"></span>
-    					</div>
-    				</div>
-    			</div>
-    		</a>
-
-    		<a href="#" class="item">
-    			<div class="poster poster-alt" style="background-image: url('images/movies/movie01-poster-thumb.jpg');">
-    				<div class="poster-body text-center">
-    					<div class="align-self-center w-100">
-    						<span class="fas fa-play fa-3x"></span>
-    					</div>
-    				</div>
-    			</div>
-    		</a>
+    		
+			<?php } ?>
     	</div><!-- / .showcase-carousel -->
     </div><!-- / .container -->
 </section><!-- / .section-webdoor -->
