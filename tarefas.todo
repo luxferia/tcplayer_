@@ -13,7 +13,7 @@ A FAZER:
   ☐ Não deixar o slider vazar pelo container
   ☐ Colocar poster um pouco pra cima
   ☐ Fazer validação do formulário de casdastro 
-  ☐ Mudar o rodapé no desktop @low
+  ✔ Mudar o rodapé no desktop @low @done (19-06-01 17:58)
   ☐ Testar como fica com o texto centralizado no webdoor @low
   ☐ Colocar animação na setinha ao passar o mouse no botão @low
   ☐ Fazer header diferente para a Home, deixando a logo quando quando estiver no topo e bg @low
@@ -22,3 +22,5 @@ A FAZER:
   ☐ Revisar mobile das internas @high
   ☐ Revisar acessibilidade @high
   ☐ Revisar todo o código @low
+
+  
