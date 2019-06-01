@@ -1,0 +1,24 @@
+A FAZER:
+
+  ☐ Fazer página do formulário de cadastro @critical
+  ☐ Fazer página de pós-cadastro @critical
+  ☐ Mostrar o título do filme e o original quando passar o mouse no poster @high
+  ☐ Colocar um overlay para dar leitura no texto do webdoor @high
+  ☐ Aumentar o espaço embaixo dos posteres @high
+  ✔ Colocar espaço entre as seções @high @done (19-06-01 17:34)
+  ✔ Encontrar uma imagem de dispositivos para a seção de dispositivos @high @done (19-06-01 17:32)
+  ✔ Experimentar tema claro @done (19-06-01 17:31)
+  ✔ Terminar a seção dispositivos @done (19-06-01 17:37)
+  ☐ Mostrar img do filme referente ao slider ativo (de preferência ao passar o mouse por cima também)
+  ☐ Não deixar o slider vazar pelo container
+  ☐ Colocar poster um pouco pra cima
+  ☐ Fazer validação do formulário de casdastro 
+  ☐ Mudar o rodapé no desktop @low
+  ☐ Testar como fica com o texto centralizado no webdoor @low
+  ☐ Colocar animação na setinha ao passar o mouse no botão @low
+  ☐ Fazer header diferente para a Home, deixando a logo quando quando estiver no topo e bg @low
+  ☐ Colocar efeito de fadein (ou similar) na seção ao rolar a página @low
+  ☐ Revisar mobile da Home @high
+  ☐ Revisar mobile das internas @high
+  ☐ Revisar acessibilidade @high
+  ☐ Revisar todo o código @low

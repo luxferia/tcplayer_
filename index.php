@@ -19,7 +19,7 @@
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-        <link href="https://fonts.googleapis.com/css?family=Montserrat|Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Lato" rel="stylesheet">
         <script src="js/modernizr-2.8.3.min.js"></script>
     </head>
 

@@ -189,7 +189,7 @@ $max: 4;
     color: $color-secondary-ltr;
 
     &:focus {
-        color: $color-text;
+        // color: $color-text;
     }
 }
 
@@ -244,6 +244,14 @@ $max: 4;
 
 .text-primary {
     color: $color-primary !important;
+}
+
+.text-muted {
+    color: $color-secondary !important;
+}
+
+.text-light {
+    color: $color-secondary-ltr !important;
 }
 
 
@@ -340,4 +348,6 @@ $max: 4;
     filter: invert(1);
 }
 
-
+.font-size-default {
+    @extend %font-size-default;
+}

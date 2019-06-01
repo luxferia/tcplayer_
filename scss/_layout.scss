@@ -37,6 +37,15 @@
 /* SECTIONS
  * -------------------------- */
 
+.content-wrapper {
+    @include padding($space-md null);
+
+    @media (min-width: $screen-md-min) {
+        @include padding(($space-base * 6) null);
+    }
+}
+
+
 .section-webdoor {
     // border-bottom: 2px solid black;
 

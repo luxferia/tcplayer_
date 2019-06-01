@@ -12,8 +12,8 @@ body {
     font: {
         family: $font-family-base;
     }
-    color: $color-text;
-    background-color: $color-secondary-dkr;
+    // color: $color-text;
+    background-color: $color-secondary-ltr;
 }
 
 a {
@@ -35,7 +35,6 @@ img {
 
 #main {
     overflow-x: hidden;
-    @include padding(null null $space-lg );
 }
 
 
