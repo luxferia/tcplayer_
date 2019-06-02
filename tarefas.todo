@@ -2,22 +2,22 @@ A FAZER:
 
   ✔ Fazer página do formulário de cadastro @critical @done (19-06-02 00:59)
   ✔ Fazer página de pós-cadastro @critical @done (19-06-02 00:59)
-  ☐ Mostrar o título do filme e o original quando passar o mouse no poster @high
-  ☐ Colocar um overlay para dar leitura no texto do webdoor @high
-  ☐ Aumentar o espaço embaixo dos posteres @high
+  ✔ Mostrar o título do filme e o original quando passar o mouse no poster @high @done (19-06-02 13:38)
+  ✔ Colocar um overlay para dar leitura no texto do webdoor @high @done (19-06-02 20:20)
+  ✔ Aumentar o espaço embaixo dos posteres @high @done (19-06-02 20:20)
   ✔ Colocar espaço entre as seções @high @done (19-06-01 17:34)
   ✔ Encontrar uma imagem de dispositivos para a seção de dispositivos @high @done (19-06-01 17:32)
   ✔ Experimentar tema claro @done (19-06-01 17:31)
   ✔ Terminar a seção dispositivos @done (19-06-01 17:37)
-  ☐ Mostrar img do filme referente ao slider ativo (de preferência ao passar o mouse por cima também)
-  ☐ Não deixar o slider vazar pelo container
+  ✔ Mostrar img do filme referente ao slider ativo (de preferência ao passar o mouse por cima também) @done (19-06-02 20:20)
+  ✘ Não deixar o slider vazar pelo container @cancelled (19-06-02 20:21)
   ☐ Colocar poster um pouco pra cima
-  ☐ Fazer validação do formulário de casdastro 
-  ☐ Experimentar sem header
+  ✔ Fazer validação do formulário de casdastro @done (19-06-02 13:39)
+  ✔ Experimentar sem header @done (19-06-02 20:21)
   ✔ Mudar o rodapé no desktop @low @done (19-06-01 17:58)
-  ☐ Testar como fica com o texto centralizado no webdoor @low
+  ✔ Testar como fica com o texto centralizado no webdoor @low @done (19-06-02 20:21)
   ☐ Colocar animação na setinha ao passar o mouse no botão @low
-  ☐ Fazer header diferente para a Home, deixando a logo quando quando estiver no topo e bg @low
+  ✘ Fazer header diferente para a Home, deixando a logo quando quando estiver no topo e bg @low @cancelled (19-06-02 13:40)
   ☐ Colocar efeito de fadein (ou similar) na seção ao rolar a página @low
   ☐ Colocar um loading enquanto carrega @low
   ☐ Revisar mobile da Home @high

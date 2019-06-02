@@ -80,25 +80,9 @@
 
 .col, .col-sm, .col-md, .col-lg, .col-xl { min-width: 1px; }
 
-%no-radius {
-    border-radius: 0;
-}
-
 
 /* TYPOGRAPHY
  * -------------------------- */
-
-$max: 4;
-@for $i from 1 through $max {
-    .display-#{$i} {
-        font-size: modular-scale(($max + 6));
-        $max: $max - 1;
-    }
-}
-
-[class*="display-"] {
-    font-weight: $font-bold;
-}
 
 .lead {
     @include margin(null null $space-sm);
@@ -108,12 +92,10 @@ $max: 4;
 /* BUTTON
  * -------------------------- */
 
-
 .btn {
     border-width: 2px;
     border-radius: $space-xxs;
     cursor: pointer;
-    // text-transform: uppercase;
     transition: all .3s;
     @include padding(null $space-xs);
 
@@ -164,21 +146,11 @@ $max: 4;
 }
 
 
-
-/* CARD / LIST GROUP
- * -------------------------- */
-
-.card {
-    @extend %no-radius;
-}
-
-
-
 /* FORM
  * -------------------------- */
 
 .form-control {
-    @extend %no-radius;
+    border-radius: 0;
     border-width: 2px;
 
     &, &:focus {
@@ -231,11 +203,6 @@ $max: 4;
     color: $color-secondary-ltr !important;
 }
 
-// .bg-dark {
-//     background-color: $color-secondary-dkr !important;
-//     color: white;
-// }
-
 
 /* ==========================================================================
    MODIFICACOES DE PLUGINS
@@ -256,7 +223,7 @@ $max: 4;
     -ms-flex-pack: center;
     justify-content: center;
     list-style: none;
-    @include margin($space-xs $space-xs 0);
+    @include margin($space-sm $space-xs 0);
     @include padding(null null null 0);
 
     @media (min-width: $screen-sm-min) {
@@ -287,7 +254,7 @@ $max: 4;
 
 %slick-dots-active {
     cursor: default;
-    background-color: white;
+    background-color: $color-primary;
     width: 1.65rem;
 }
 
@@ -322,13 +289,6 @@ $max: 4;
    UTILITIES PROPRIOS
    ========================================================================== */
 
-.invert-x {
-    transform: scaleX(-1);
-}
-
-.invert-colors {
-    filter: invert(1);
-}
 
 .font-size-default {
     @extend %font-size-default;

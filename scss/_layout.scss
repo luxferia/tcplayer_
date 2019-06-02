@@ -6,9 +6,11 @@
  * -------------------------- */
 
 .header {
+    z-index: 99;
+    @include position(absolute, null 0);
+
     &-navbar {
-        z-index: 99;
-        @include padding($space-xxs null);
+        @include padding($space-md null null);
 
         .navbar-brand {
             #{$_link-hover} {
@@ -16,12 +18,10 @@
             }
         }
 
-        &.navbar-dark {
-            background-color: rgba($color-secondary-dk, .9);
+        @media (min-width: $screen-md-min) {
         }
     }
 }
-
 
 
 /* FOOTER
@@ -45,53 +45,99 @@
     }
 }
 
+.section-webdoor .webdoor-wrapper,
+.webdoor-carousel .item {
+    min-height: 100vh;
+
+    @media (min-width: $screen-md-min) {
+        min-height: 30rem;
+    }
+
+    @media (min-width: $screen-lg-min) {
+        min-height: 40rem;
+    }
+}
 
 .section-webdoor {
-    // border-bottom: 2px solid black;
+    .webdoor-wrapper {
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        @include position(relative, null);
+        @include padding(3.75rem null 20%);
 
-    .webdoor-item {
-        background: none;
-        padding-bottom: 0;
-        background-position: center 4.5rem;
-        @include padding(calc(4.5rem + 50%) null null);
-
-        &:before, &:after {
-            background-position-x: center;
-            background-repeat: no-repeat;
-            min-height: 43.25rem;
-            @include before-after02;
-        }
-        
-        &:before {
-            background-image: url(../images/bg-webdoor.png);
-            background-color: rgba(33, 33, 33, 0.9);
-            background-position-y: bottom;
-            background-repeat: no-repeat;
-            bottom: -1px;
-            @include before-after02;
+        .container {
+            color: white;
+            text-shadow: 1px 1px 1px rgba(black, .65);
         }
 
-        &:after {
-            background-image: url(../images/bg-img-webdoor01.jpg);
-            background-position-y: center;
-            background-size: cover;
+        .btn {
+            text-shadow: none;
+        }
+    }
+
+    .webdoor-carousel {
+        top: 0;
+
+        .container {
+            font-size: $font-size-smaller;
+            text-align: center;
+            @include padding($space-xxs null null);
         }
 
-        @media (min-width: $screen-sm-min) {
-            @include padding(($space-md * 2) null null);
+        .movie-title.small {
+            font-style: italic;
+        }
+    }
+
+    .poster {
+        &-body {
+            line-height: $line-height-heading;
+            text-align: center;
         }
 
-        @media (min-width: $screen-xl-min) {
-            p {
-                max-width: 23.7rem;
+        #{$_link-hover} {
+            .poster-body {
+                $gradient: rgba(black, .15) 50%, rgba(black, .9);
+                background: -moz-linear-gradient(top, $gradient);
+                background: -webkit-linear-gradient(top, $gradient);
+                background: linear-gradient(to bottom, $gradient);
+
+            }
+        }
+
+        .movie-title {
+            transition: all 0.3s;
+        }
+
+        #{$_link-hover} {
+            .movie-title {
+                @include margin(null null $space-sm);
             }
         }
     }
 
-    .showcase-carousel-alt {
-        @include margin($space-lg null null);
+    .showcase-carousel {
+        @include margin(-20% null null);
+    }
+
+    @media (min-width: $screen-md-min) {
+        .webdoor-wrapper {
+            @include padding(null null 10%);
+        }
+        .webdoor-carousel {
+            .container {
+                @include padding($space-md null null);
+            }
+        }
+
+        .showcase-carousel {
+            @include margin(-10% null null);
+        }
     }
 }
+
+/* MODAL CADASTRO */
 
 .modal-signup {
     .modal-content {

@@ -6,14 +6,41 @@ $json_output = json_decode($json_movies_file);
 
 ?>
 
-
-<section id="secao-webdoor" class="section-webdoor webdoor">
+<section id="secao-webdoor" class="section-webdoor">
+	<?php /*
     <div class="webdoor-item">
-        <div class="container content-wrapper pb-5">
-            <div class="row">
-                <div class="col-md-7 col-lg-6 offset-lg-1 pt-md-5">
-                    <h2 class="h1 mt-lg-5">Filmes exclusivos dos maiores estúdios é <span class="text-primary">só dar um play</span></h2>
-                    <div class="h6 pr-lg-5">Curta 7 dias grátis, assine por R$ 37,90 / mês e cancele quando quiser.</div>
+        
+    </div><!-- / .webdoor-item -->
+    */ ?>
+
+    <div class="webdoor-wrapper">
+    	<div class="webdoor-carousel">
+    		<?php foreach ($json_output->data as $movie) {
+    			$movie_webdoor = str_replace("'", "\'", $movie->hero3x1);
+    			$movie_title = $movie->titulo_original;
+    			$movie_title_pt = $movie->titulo_portugues;
+    			?>
+
+    			<div class="item" style="background-image: url(<?php echo $movie_webdoor; ?>);">
+
+    				<div class="container">
+    					<div class="row">
+    						<div class="col-auto ml-auto">
+    							<span class="movie-title d-inline d-md-block"><?php echo $movie_title_pt; ?></span>
+    							<span class="movie-title small d-inline d-md-block" lang="en">(<?php echo $movie_title; ?>)</span>
+    						</div>
+    					</div>
+    				</div>
+    			</div><!-- / .item -->
+
+    		<?php } ?>
+    	</div><!-- / .webdoor-carousel -->
+
+    	<div class="container align-self-end align-self-md-center py-5">
+            <div class="row justify-content-center justify-content-md-start">
+                <div class="col-11 col-md-9 col-lg-6 col-xl-5 text-center text-md-left">
+                    <h2 class="mb-2">Filmes exclusivos dos maiores estúdios é <br class="d-none d-sm-block"><span class="text-primary">só dar um play</span></h2>
+                    <div class="h6 text-light">Curta 7 dias grátis, assine por <span class="text-white font-weight-normal">R$ 37,90 / mês</span> e cancele quando quiser.</div>
 
                     <div class="mt-4">
                         <a href="#" class="btn btn-primary rounded-pill btn-lg" data-after-text="Cadastre-se" data-toggle="modal" data-target="#signup-modal">Experimente grátis <i class="fas fa-chevron-right ml-2"></i></a>
@@ -21,27 +48,30 @@ $json_output = json_decode($json_movies_file);
                 </div><!-- / .col -->
             </div><!-- / .row -->
         </div><!-- / .container -->
-    </div><!-- / .webdoor-item -->
+    </div><!-- / .webdoor-wrapper -->
 
-    <div class="container">
+
     	<div class="showcase-carousel showcase-carousel-col5" id="showcase-carousel02">
     		<?php foreach ($json_output->data as $movie) { 
-    			$movie_poster = str_replace("'", "\'", $movie->poster_m)
+    			$movie_poster = str_replace("'", "\'", $movie->poster_m);
+    			// $movie_title = $movie->titulo_original;
+    			$movie_title_pt = $movie->titulo_portugues;
     		?>
 
-    		<a href="#" class="item">
-    			<div class="poster poster-alt" style="background-image: url(<?php echo $movie_poster; ?>)">
-    				<div class="poster-body text-center">
-    					<div class="align-self-center w-100">
-    						<span class="fas fa-play fa-3x"></span>
+    		<div class="item">
+    			<div class="poster poster-alt" style="background-image: url(<?php echo $movie_poster; ?>);">
+    				<div class="poster-body">
+    					<div class="align-self-end w-100">
+    						<div class="movie-title"><?php echo $movie_title_pt; ?></div>
+    						<!-- <div class="small" lang="en"><?php //echo $movie_title; ?></div> -->
     					</div>
     				</div>
     			</div>
-    		</a>
+    		</div>
     		
 			<?php } ?>
     	</div><!-- / .showcase-carousel -->
-    </div><!-- / .container -->
+
 </section><!-- / .section-webdoor -->
 
 <section class="content-wrapper container text-center">

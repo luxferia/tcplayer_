@@ -12,81 +12,112 @@
 /* WEBDOOR
  * -------------------------- */
 
-.webdoor {
-    color: white;
+.webdoor-carousel {
+    overflow: hidden;
+    @include position(absolute, null 0);
 
-    &-item {
+    &:after {
+        background-color: rgba(black, .45);
+        @include before-after02;
+    }
+
+    .item {
         background: {
-            color: black;
-            position: center top;
+            color: $color-secondary-ltr;
+            position: center;
             repeat: no-repeat;
-            size: contain;
+            size: cover;
         }
-        display: -ms-flexbox;
-        display: flex;
         overflow: hidden;
-        width: 100%;
         @include position(relative, null);
-        @include margin(null null 0);
-        @include padding(50% null 3rem);
+    }
 
-        &:before {
+    @media (min-width: $screen-md-min) {
+        &:after {
+            $gradient: black, rgba(black, .35) 50%;
+            background: -moz-linear-gradient(left, $gradient);
+            background: -webkit-linear-gradient(left, $gradient);
+            background: linear-gradient(to right, $gradient);
             @include before-after02;
         }
-
-        > .container {
-            z-index: 1;
-            -ms-flex-item-align: center;
-            align-self: center;
-            @include position(relative, null);
-        }
-    }
-
-    &-medium, &-big, &-full {
-        .webdoor-item {
-            min-height: 100vh;
-        }
-    }
-
-    @media (min-width: $screen-sm-min) {
-        &-item {
-            background: {
-                position: center;
-                size: cover;
-            }
-            @include padding(4rem null);
-
-            &:before {
-                background: -moz-linear-gradient(left, black 33%, transparent 50%);
-                background: -webkit-linear-gradient(left, black 33%, transparent 50%);
-                background: linear-gradient(to right, black 33%, transparent 50%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=1 );
-            }
-        }
-
-        &-medium {
-            .webdoor-item {
-                min-height: 33.4375rem;
-            }
-        }
-
-        &-big {
-            .webdoor-item {
-                min-height: 46.68rem;
-            }
-        }
-
-        &-full {
-            .webdoor-item {
-                min-height: 100vh;
-            }
-        }
-        
     }
 }
 
+// .webdoor {
+//     color: white;
 
-/* OVERLAY
+//     &-item {
+//         background: {
+//             color: black;
+//             position: center top;
+//             repeat: no-repeat;
+//             size: contain;
+//         }
+//         display: -ms-flexbox;
+//         display: flex;
+//         overflow: hidden;
+//         width: 100%;
+//         @include position(relative, null);
+//         @include margin(null null 0);
+//         @include padding(50% null 3rem);
+
+//         &:before {
+//             @include before-after02;
+//         }
+
+//         > .container {
+//             z-index: 1;
+//             -ms-flex-item-align: center;
+//             align-self: center;
+//             @include position(relative, null);
+//         }
+//     }
+
+//     &-medium, &-big, &-full {
+//         .webdoor-item {
+//             min-height: 100vh;
+//         }
+//     }
+
+//     @media (min-width: $screen-sm-min) {
+//         &-item {
+//             background: {
+//                 position: center;
+//                 size: cover;
+//             }
+//             @include padding(4rem null);
+
+//             &:before {
+//                 background: -moz-linear-gradient(left, black 33%, transparent 50%);
+//                 background: -webkit-linear-gradient(left, black 33%, transparent 50%);
+//                 background: linear-gradient(to right, black 33%, transparent 50%);
+//                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=1 );
+//             }
+//         }
+
+//         &-medium {
+//             .webdoor-item {
+//                 min-height: 33.4375rem;
+//             }
+//         }
+
+//         &-big {
+//             .webdoor-item {
+//                 min-height: 46.68rem;
+//             }
+//         }
+
+//         &-full {
+//             .webdoor-item {
+//                 min-height: 100vh;
+//             }
+//         }
+        
+//     }
+// }
+
+
+/* POSTER
  * -------------------------- */
 
 %overlay {
@@ -123,9 +154,6 @@
     opacity: 1;
 }
 
-/* POSTER
- * -------------------------- */
-
 .poster {
     @extend %overlay;
     @extend %overlay-img;
@@ -143,7 +171,7 @@
     #{$_link-hover} {
         .poster-body {
             @extend %overlay-opacity-100;
-            background-color: rgba(black, .15);
+            background-color: rgba(black, .65);
         }
     }
 
@@ -157,101 +185,61 @@
  * -------------------------- */
 
 .showcase-carousel {  
-    &, &-alt {
-        z-index: 9;
+    z-index: 9;
 
-        // .slick-arrow {
-        //     z-index: 9;
-        //     width: 4.25rem;
-        //     text-align: center;
-        //     text-shadow: 0 1px 0 black;
-        //     @include position(absolute, 0 null);
+    .poster {
+        width: 100%;
+        transition: all .3s;
+        background-color: $color-secondary-dk;
+        transform: scale(.9);
+    }
 
-        //     &.slick-left {
-        //         @include position(null, null null null 0);
-        //     }
+    .item {
+        // overflow: hidden;
+        display: block !important;
+        @include position(relative, null);
 
-        //     &.slick-right {
-        //         @include position(null, null 0 null null);
-        //     }
-
-        //     [class*="i-arrow"] {
-        //         transition: all .3s;
-        //         @include position(absolute, 0);
-        //         @include margin(auto);
-        //     }
-
-        //     #{$_link-hover} {
-        //         [class*="i-arrow"] {
-        //             transform: scale(1.05);
-        //             background: {
-        //                 image: url('../images/icon-arrow-right-rd.png');
-        //             }
-        //             // color: $color-primary-lt;
-        //         }
-
-        //         .i-arrow-left {
-        //             transform: scaleX(-1) scale(1.05);
-        //         }
-        //     }
-        // }
-
-        .slick-slide {
-            @include padding(null $space-xxs);
+        &:before, &:after {
+            content: '';
+            display: none;
+            @include position(absolute, null);
         }
 
-        .poster {
-            width: 100%;
-            transition: all .3s;
-            background-color: $color-secondary-dk;
+        &:before {
+            z-index: 1;
+            border: 4px solid white;
+            box-shadow: 0 4px 4px rgba(black, .2);
+            @include position(null, 1px);
         }
 
-        .item {
-            display: block !important;
-            @include position(relative, null);
+        &:after {
+            z-index: 2;
+            @include triangle("down", 2rem, .5rem, white);
+            @include margin(null null null -1rem);
+            @include position(absolute, null null -6px 50%);
+        }
 
-            &:before, &:after {
-                content: '';
-                display: none;
-                @include position(absolute, null);
-            }
-
-            &:before {
-                z-index: 1;
-                border: 4px solid white;
-                box-shadow: 0 4px 4px rgba(black, .2);
-                @include position(null, 1px);
-            }
-
-            &:after {
-                z-index: 2;
-                @include triangle("down", 2rem, .5rem, white);
-                @include margin(null null null -1rem);
-                @include position(absolute, null null -6px 50%);
-            }
-
-            &:focus {
-                outline: none;
-            }
+        &:focus {
+            outline: none;
         }
     }
 
-    & {
-        .slick-list {
-            overflow: visible;
-        }
+    .slick-list {
+        overflow: visible;
+    }
 
-        .slick-slide {
-            @include position(relative, null);
-        }
+    .slick-slide {
+        @include padding(null $space-xxs);
+        @include position(relative, null);
+    }
 
-        .item {
-            #{$_link-hover} {
-                .poster {
-                    transform: scale(1.1);
-                    z-index: 10;
-                }
-            }
+    .slick-current,
+    .item:focus ,
+    .item:hover {
+        .poster {
+            transform: scale(1);
+            z-index: 10;
+            box-shadow: 0 0 $space-xs rgba(black, .65);
         }
     }
 }

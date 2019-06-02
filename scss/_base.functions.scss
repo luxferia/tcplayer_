@@ -85,16 +85,20 @@
     }
 }
 
+//* BEFORE / AFTER *//
 
 @mixin before-after01 {
     content: '';
     display: inline-block;
 }
 
-@mixin before-after02($d:null) {
+// $d : x (cobrir na horizontal) | y (cobrir na vertical) | null (cobrir tudo);
+// $z : 0 (z-index);
+
+@mixin before-after02($d:null, $z:0) {
     @include before-after01;
     position: absolute;
-    z-index: 0;
+    z-index: $z;
     @if $d == "x" {
         left: 0;
         right: 0;
