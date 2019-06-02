@@ -275,6 +275,8 @@ h6, .h6 {
     .label-floated .form-control:focus {
       box-shadow: none;
       border-bottom-color: #e53c33; }
+    .label-floated .form-control:disabled, .label-floated .form-control[readonly] {
+      background-color: transparent; }
   .label-floated textarea.form-control {
     height: 2.5rem; }
   .label-floated.filled label {
@@ -284,6 +286,12 @@ h6, .h6 {
     color: #8d8da5; }
   .label-floated.filled textarea.form-control {
     min-height: 4.5rem; }
+
+.form-group .label-floated {
+  margin-top: 1rem; }
+
+fieldset[disabled] .label-floated .form-control {
+  opacity: .85; }
 
 /* ==========================================================================
    ESTRUTURA DO LAYOUT
@@ -359,6 +367,25 @@ h6, .h6 {
       max-width: 23.7rem; } }
 .section-webdoor .showcase-carousel-alt {
   margin-top: 4rem; }
+
+.modal-signup .modal-content {
+  background-color: #3d3d4d;
+  color: white; }
+.modal-signup .modal-header {
+  border-bottom: 0; }
+  .modal-signup .modal-header + .modal-body {
+    padding-top: 0; }
+.modal-signup .modal-body {
+  padding: 2rem; }
+.modal-signup .label-floated.filled label {
+  color: #bebecb; }
+.modal-signup .close {
+  color: #eeeef2;
+  text-shadow: 0 1px 0 black; }
+.modal-signup .form-control option {
+  background-color: #3d3d4d; }
+.modal-signup .invalid-feedback {
+  color: #f1938e; }
 
 /* ==========================================================================
    MODIFICACOES DO FRAMEWORK
@@ -1266,8 +1293,7 @@ h6, .h6 {
 .col, .col-sm, .col-md, .col-lg, .col-xl {
   min-width: 1px; }
 
-.card, .form-control,
-.input-group-lg > .form-control, .input-group-lg > .input-group-append > .btn, .input-group-lg > .input-group-append > .input-group-text, .input-group-lg > .input-group-prepend > .btn, .input-group-lg > .input-group-prepend > .input-group-text {
+.card, .form-control {
   border-radius: 0; }
 
 /* TYPOGRAPHY
@@ -1296,7 +1322,6 @@ h6, .h6 {
   border-width: 2px;
   border-radius: 0.5rem;
   cursor: pointer;
-  text-transform: uppercase;
   transition: all .3s;
   padding-right: 1rem;
   padding-left: 1rem; }
@@ -1313,13 +1338,16 @@ h6, .h6 {
 
 /* PRIMARY */
 .btn-outline-primary {
-  border-color: #eb6861;
-  color: #eb6861; }
+  border-color: #e53c33;
+  color: #e53c33; }
 
 .btn-primary {
   border-color: #e53c33;
   background-color: #e53c33; }
   .btn-primary:focus, .btn-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:hover, .btn-outline-primary.focus, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary:active:hover, .btn-outline-primary.active:hover, .btn-outline-primary.active:not(:disabled):not(.disabled), .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .btn-primary:active:hover, .btn-outline-primary:active, .btn-outline-primary.active:active:hover, .btn-outline-primary:active:not(:disabled):not(.disabled), .btn-primary.active:hover, .active.btn-outline-primary, .active.btn-outline-primary:active:hover, .active.btn-outline-primary:not(:disabled):not(.disabled), .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active {
+    border-color: #d9251c;
+    background-color: #d9251c; }
+  .btn-primary.disabled, .btn-primary:disabled {
     border-color: #d9251c;
     background-color: #d9251c; }
 
@@ -1344,26 +1372,14 @@ h6, .h6 {
 .form-control {
   border-width: 2px; }
   .form-control, .form-control:focus {
+    color: inherit;
     background-color: transparent; }
-
-.form-control {
-  color: #eeeef2; }
-
-.form-group label, .label-floated label {
-  color: #bebecb; }
-
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before,
-.custom-control-input:checked ~ .custom-control-label::before {
-  background-color: #e53c33; }
-
-.custom-control-input:focus ~ .custom-control-label::before {
-  box-shadow: 0 0 0 1px #fff; }
 
 .form-text {
   line-height: 1.2; }
 
-.bs-tooltip-bottom {
-  top: .2rem !important; }
+.invalid-feedback {
+  color: #e53c33; }
 
 /* CLOSE
  * -------------------------- */
@@ -1373,8 +1389,6 @@ h6, .h6 {
   opacity: 1;
   font-family: "Montserrat", sans-serif;
   line-height: .5;
-  color: #eeeef2;
-  text-shadow: 0 1px 0 black;
   transition: all .3s; }
   .close:not(:disabled):not(.disabled):focus, .close:not(:disabled):not(.disabled):hover {
     color: #e53c33;

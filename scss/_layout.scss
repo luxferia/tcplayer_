@@ -92,3 +92,43 @@
         @include margin($space-lg null null);
     }
 }
+
+.modal-signup {
+    .modal-content {
+        background-color: $color-secondary-dk;
+        color: white;
+    }
+
+    .modal-header {
+        border-bottom: 0;
+
+        + .modal-body {
+            @include padding(0 null null);
+        }
+    }
+
+    .modal-body {
+        @include padding($space-sm);
+    }
+
+    .label-floated {
+        &.filled {
+            label {
+                color: $color-secondary-lt;
+            }
+        }
+    }
+
+    .close {
+        color: $color-secondary-ltr;
+        text-shadow: 0 1px 0 black;
+    }
+
+    .form-control option {
+        background-color: $color-secondary-dk;
+    }
+
+    .invalid-feedback {
+        color: lighten($color-primary-lt, 10%);
+    }
+}

@@ -1,5 +1,5 @@
 <header id="header" class="header">
-    <nav id="header-navbar" class="header-navbar navbar navbar-dark fixed-top">
+    <nav id="header-navbar" class="header-navbar navbar navbar-dark">
         <div class="container justify-content-center">
             <a class="navbar-brand" href="#">
                 <?php include('includes/_logo.php'); ?>

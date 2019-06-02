@@ -296,6 +296,10 @@
             box-shadow: none;
             @include border-color(null null $color-primary);
         }
+
+        &:disabled, &[readonly] {
+            background-color: transparent;
+        }
     }
 
     textarea.form-control {
@@ -312,6 +316,20 @@
 
         textarea.form-control {
             min-height: 4.5rem;
+        }
+    }
+}
+
+.form-group {
+    .label-floated {
+        @include margin($space-xs null null);
+    }
+}
+
+fieldset[disabled] {
+    .label-floated {
+        .form-control {
+            opacity: .85;
         }
     }
 }

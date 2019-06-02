@@ -89,27 +89,6 @@ $( document ).ready( function() {
 	// 	}]
 	// });
 
-	$('.showcase-carousel .item').on("click", function(e) {
-		e.preventDefault();
-		var target = $(this).attr('href');
-		var wdContainer = $(".webdoor-showcase-carousel");
-
-		$(this).closest('.showcase-carousel').find('.item').removeClass('active');
-		$(this).addClass('active');
-
-		wdContainer.fadeIn('fast');
-		wdContainer.children('.webdoor').not(target).fadeOut('fast');
-		$(target).fadeIn('fast');
-	});
-
-	$('.webdoor-showcase-carousel .close').on("click", function(e) {
-		e.preventDefault();
-		var wdContainer = $(this).parent();
-
-		$(this).parent().parent().find('.showcase-carousel .item').removeClass('active');
-		wdContainer.children('.webdoor').fadeOut('fast');
-		wdContainer.fadeOut('fast');
-	});
 
 	function updateText(event) {
 		var input = $(this);
@@ -127,5 +106,84 @@ $( document ).ready( function() {
 
 	$(".label-floated .form-control").keydown(updateText);
 	$(".label-floated .form-control").change(updateText);
+
+	$('.mask-date').mask('00/00/0000');
+	$('.mask-cpf').mask('000.000.000-00', {reverse: true});
+
+	var contactForm = $('#signup-form');
+	var formMsgWrapper = $('.message-wrapper');
+
+	contactForm.validate({
+		rules: {
+			'signup-name': {
+				required: true,
+				minlength: 3
+			},
+			'signup-email': {
+				required: true,
+				email: true
+			},
+			'signup-cpf': {
+				required: true,
+				minlength: 14
+			},
+			'signup-birthday': {
+				required: true,
+				minlength: 10
+			},
+			'signup-uf': {
+				required: true
+			},
+			'signup-city': {
+				required: true
+			},
+		},
+		messages: {
+			'signup-cpf': {
+				minlength: 'Por favor, forneça um CPF válido'
+			},
+			'signup-birthday': {
+				minlength: 'Por favor, forneça uma data válida'
+			}
+		},
+		errorElement: 'div',
+		errorClass: 'is-invalid',
+		errorPlacement: function(error, input) {
+			error.addClass('form-text invalid-feedback');
+
+			if(input.parent('.label-floated').length) {
+				error.insertAfter(input.parent());
+			} else {
+				error.insertAfter(input);
+			}
+		},
+		submitHandler: function(form) {
+			$(this).children('fieldset').prop('disabled', true);
+
+			$(this).find('button[type="submit"]').before('<i class="fas fa-circle-notch fa-spin mr-2" aria-label="Aguarde"></i>');
+
+			contactForm.ajaxSubmit({
+				type: 'POST',
+				// url: 'includes/send-email.php',
+				timeout: 10000,
+            	clearForm: true,
+            	resetForm: true,
+	            error: function(xhr, message) {
+	            	if (message==="timeout") {
+	            		contactForm.children('fieldset').before('<div class="message-wrapper d-flex mb-2" role="alert"><i class="fas fa-exclamation-circle fa-2x mr-2" title="Atenção"></i><div>Tempo de espera excedido. Por favor, tente novamente.</div></div>');
+	            	}
+	            },
+	            success: function() {
+	            	contactForm.parent().find('#signup-modalLabel').html('Falta pouco!');
+	            	contactForm.before('<div class="lead  text-light mt-4 text-center" role="alert">Em instantes, você receberá seu login e senha através do email cadastrado para aproveitar seus <span class="text-white font-weight-normal">7 dias grátis</span>.</div><button type="button" class="sr-only" data-dismiss="modal">Fechar modal</button>');
+	            	contactForm.remove();
+	            }
+	        });
+		},
+
+		invalidHandler: function(form, validator) {
+			$(this).children('fieldset').before('<div class="message-wrapper d-flex mb-2" role="alert"><i class="fas fa-exclamation-circle fa-2x mr-2" title="Atenção"></i><div>Os campos com asterisco são obrigatórios. Verifique seus dados ou tente preencher novamente.</div></div>');
+		}
+	});
 	
 });

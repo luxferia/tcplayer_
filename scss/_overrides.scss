@@ -113,7 +113,7 @@ $max: 4;
     border-width: 2px;
     border-radius: $space-xxs;
     cursor: pointer;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     transition: all .3s;
     @include padding(null $space-xs);
 
@@ -134,7 +134,7 @@ $max: 4;
 
 /* PRIMARY */
 .btn-outline-primary {
-    @include btn-style($color-primary-lt, $color-primary-lt, null);
+    @include btn-style($color-primary, $color-primary, null);
 
     #{$_btn-fullstate} {     // HOVER, FOCUS, ACTIVE, ETC
         @extend .btn-primary:hover;
@@ -143,6 +143,10 @@ $max: 4;
 
 .btn-primary {
     @include btn-style-full($bd-color:$color-primary, $bg-color-hover:'dk');
+
+    &.disabled, &:disabled {
+        @include btn-style($color-primary-dk);
+    }
 }
 
 
@@ -172,48 +176,23 @@ $max: 4;
 
 /* FORM
  * -------------------------- */
-.form-control,
-.input-group-lg>.form-control, .input-group-lg>.input-group-append>.btn, .input-group-lg>.input-group-append>.input-group-text, .input-group-lg>.input-group-prepend>.btn, .input-group-lg>.input-group-prepend>.input-group-text {
-    @extend %no-radius;
-}
 
 .form-control {
+    @extend %no-radius;
     border-width: 2px;
 
     &, &:focus {
+        color: inherit;
         background-color: transparent;
     }
-}
-
-.form-control {
-    color: $color-secondary-ltr;
-
-    &:focus {
-        // color: $color-text;
-    }
-}
-
-.form-group, .label-floated {
-    label {
-        color: $color-secondary-lt;
-    }
-}
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before,
-.custom-control-input:checked~.custom-control-label::before {
-    background-color: $color-primary;
-}
-
-.custom-control-input:focus~.custom-control-label::before {
-    box-shadow: 0 0 0 1px #fff;
 }
 
 .form-text {
     line-height: $line-height-heading;
 }
 
-.bs-tooltip-bottom {
-    top: .2rem !important;
+.invalid-feedback {
+    color: $color-primary;
 }
 
 
@@ -226,8 +205,6 @@ $max: 4;
     opacity: 1;
     font-family: $font-family-highlight;
     line-height: .5;
-    color: $color-secondary-ltr;
-    text-shadow: 0 1px 0 black;
     transition: all .3s;
 
     &:not(:disabled):not(.disabled) {
@@ -253,6 +230,11 @@ $max: 4;
 .text-light {
     color: $color-secondary-ltr !important;
 }
+
+// .bg-dark {
+//     background-color: $color-secondary-dkr !important;
+//     color: white;
+// }
 
 
 /* ==========================================================================
