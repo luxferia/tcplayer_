@@ -43,79 +43,6 @@
     }
 }
 
-// .webdoor {
-//     color: white;
-
-//     &-item {
-//         background: {
-//             color: black;
-//             position: center top;
-//             repeat: no-repeat;
-//             size: contain;
-//         }
-//         display: -ms-flexbox;
-//         display: flex;
-//         overflow: hidden;
-//         width: 100%;
-//         @include position(relative, null);
-//         @include margin(null null 0);
-//         @include padding(50% null 3rem);
-
-//         &:before {
-//             @include before-after02;
-//         }
-
-//         > .container {
-//             z-index: 1;
-//             -ms-flex-item-align: center;
-//             align-self: center;
-//             @include position(relative, null);
-//         }
-//     }
-
-//     &-medium, &-big, &-full {
-//         .webdoor-item {
-//             min-height: 100vh;
-//         }
-//     }
-
-//     @media (min-width: $screen-sm-min) {
-//         &-item {
-//             background: {
-//                 position: center;
-//                 size: cover;
-//             }
-//             @include padding(4rem null);
-
-//             &:before {
-//                 background: -moz-linear-gradient(left, black 33%, transparent 50%);
-//                 background: -webkit-linear-gradient(left, black 33%, transparent 50%);
-//                 background: linear-gradient(to right, black 33%, transparent 50%);
-//                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=1 );
-//             }
-//         }
-
-//         &-medium {
-//             .webdoor-item {
-//                 min-height: 33.4375rem;
-//             }
-//         }
-
-//         &-big {
-//             .webdoor-item {
-//                 min-height: 46.68rem;
-//             }
-//         }
-
-//         &-full {
-//             .webdoor-item {
-//                 min-height: 100vh;
-//             }
-//         }
-        
-//     }
-// }
-
 
 /* POSTER
  * -------------------------- */
@@ -243,7 +170,6 @@
         }
     }
 }
-
 
 
 /* LABELS FLUTUATES (FORM)

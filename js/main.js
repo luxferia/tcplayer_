@@ -14,7 +14,6 @@ $( document ).ready( function() {
 
 	$('.showcase-carousel').slick({
 		autoplay: true,
-		speed: 2500,
 		arrows: false,
 		dots: true,
 		infinite: true,

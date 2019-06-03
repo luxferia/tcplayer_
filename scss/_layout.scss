@@ -38,7 +38,7 @@
  * -------------------------- */
 
 .content-wrapper {
-    @include padding($space-md null);
+    @include padding($space-lg null);
 
     @media (min-width: $screen-md-min) {
         @include padding(($space-base * 6) null);
@@ -49,12 +49,21 @@
 .webdoor-carousel .item {
     min-height: 100vh;
 
+
     @media (min-width: $screen-md-min) {
-        min-height: 30rem;
+        min-height: 33rem;
     }
 
     @media (min-width: $screen-lg-min) {
+        min-height: 35rem;
+    }
+
+    @media (min-width: $screen-xl-min) {
         min-height: 40rem;
+    }
+
+    @media (max-width: $screen-md-max) and (orientation: landscape) {
+        min-height: 33rem;
     }
 }
 
@@ -64,7 +73,7 @@
         display: flex;
         overflow: hidden;
         @include position(relative, null);
-        @include padding(3.75rem null 20%);
+        @include padding(3.75rem null ($space-base * 4));
 
         .container {
             color: white;
@@ -118,7 +127,7 @@
     }
 
     .showcase-carousel {
-        @include margin(-20% null null);
+        @include margin(($space-base * -4) null null);
     }
 
     @media (min-width: $screen-md-min) {
@@ -135,6 +144,7 @@
             @include margin(-10% null null);
         }
     }
+
 }
 
 /* MODAL CADASTRO */

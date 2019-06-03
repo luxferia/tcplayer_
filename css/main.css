@@ -306,8 +306,8 @@ fieldset[disabled] .label-floated .form-control {
 /* SECTIONS
  * -------------------------- */
 .content-wrapper {
-  padding-top: 3rem;
-  padding-bottom: 3rem; }
+  padding-top: 4rem;
+  padding-bottom: 4rem; }
   @media (min-width: 768px) {
     .content-wrapper {
       padding-top: 6rem;
@@ -319,11 +319,19 @@ fieldset[disabled] .label-floated .form-control {
   @media (min-width: 768px) {
     .section-webdoor .webdoor-wrapper,
     .webdoor-carousel .item {
-      min-height: 30rem; } }
+      min-height: 33rem; } }
   @media (min-width: 992px) {
     .section-webdoor .webdoor-wrapper,
     .webdoor-carousel .item {
+      min-height: 35rem; } }
+  @media (min-width: 1200px) {
+    .section-webdoor .webdoor-wrapper,
+    .webdoor-carousel .item {
       min-height: 40rem; } }
+  @media (max-width: 991px) and (orientation: landscape) {
+    .section-webdoor .webdoor-wrapper,
+    .webdoor-carousel .item {
+      min-height: 33rem; } }
 
 .section-webdoor .webdoor-wrapper {
   display: -ms-flexbox;
@@ -331,7 +339,7 @@ fieldset[disabled] .label-floated .form-control {
   overflow: hidden;
   position: relative;
   padding-top: 3.75rem;
-  padding-bottom: 20%; }
+  padding-bottom: 4rem; }
   .section-webdoor .webdoor-wrapper .container {
     color: white;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.65); }
@@ -357,7 +365,7 @@ fieldset[disabled] .label-floated .form-control {
 .section-webdoor .poster:focus .movie-title, .section-webdoor .poster:hover .movie-title {
   margin-bottom: 2rem; }
 .section-webdoor .showcase-carousel {
-  margin-top: -20%; }
+  margin-top: -4rem; }
 @media (min-width: 768px) {
   .section-webdoor .webdoor-wrapper {
     padding-bottom: 10%; }
