@@ -16,14 +16,14 @@ A FAZER:
   ✔ Experimentar sem header @done (19-06-02 20:21)
   ✔ Mudar o rodapé no desktop @low @done (19-06-01 17:58)
   ✔ Testar como fica com o texto centralizado no webdoor @low @done (19-06-02 20:21)
-  ☐ Colocar animação na setinha ao passar o mouse no botão @low
+  ✔ Colocar animação na setinha ao passar o mouse no botão @low @done (19-06-02 22:14)
   ✘ Fazer header diferente para a Home, deixando a logo quando quando estiver no topo e bg @low @cancelled (19-06-02 13:40)
   ☐ Colocar efeito de fadein (ou similar) na seção ao rolar a página @low
   ☐ Colocar um loading enquanto carrega @low
   ✔ Revisar mobile da Home @high @done (19-06-02 21:21)
   ✔ Revisar mobile das internas @high @done (19-06-02 00:59)
-  ☐ Revisar acessibilidade @high
+  ✔ Revisar acessibilidade @high @done (19-06-02 22:47)
   ✔ Revisar todo o código @low @done (19-06-02 22:00)
-  ☐ Escrever o README @critical
+  ✔ Escrever o README @critical @done (19-06-02 22:46)
   ☐ Hospedar @low
 

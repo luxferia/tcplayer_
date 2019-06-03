@@ -1,9 +1,3 @@
-/***
- * $type: margin || padding
- * $gutter: tamanho do espacamento
- * $i: escala de tamanho do BS 1 - 2 - 3 - 4
- * $bp: breakpoint de classe do BS
- ***/
 .label-floated label {
   transition: all 0.3s; }
 
@@ -13,10 +7,6 @@
 /* ==========================================================================
    GLOBAL
    ========================================================================== */
-/**
- * Alguns componentes do Bootstrap estao sendo sobrescritos aqui, nao foi feita a 
- * separacao.
- **/
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #eeeef2; }
@@ -1460,8 +1450,6 @@ fieldset[disabled] .label-floated .form-control {
   position: relative; }
 
 a:focus .animate-arrow, a:hover .animate-arrow, .btn:focus .animate-arrow, .btn:hover .animate-arrow {
-  animation-duration: 1s;
-  animation-name: animate-arrow;
-  animation-iteration-count: infinite; }
+  animation: 1s animate-arrow infinite; }
 
 /*# sourceMappingURL=main.css.map */

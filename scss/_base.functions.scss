@@ -1,12 +1,12 @@
 // ========================================================================== //
 //	MIXINS
 // ========================================================================== //
-/***
- * $type: margin || padding
- * $gutter: tamanho do espacamento
- * $i: escala de tamanho do BS 1 - 2 - 3 - 4
- * $bp: breakpoint de classe do BS
- ***/
+//***
+//* $type: margin || padding
+//* $gutter: tamanho do espacamento
+//* $i: escala de tamanho do BS 1 - 2 - 3 - 4
+//* $bp: breakpoint de classe do BS
+//***/
  
 @mixin set-gutters($type, $gutter, $i, $bp:null){
     @if $bp != null {

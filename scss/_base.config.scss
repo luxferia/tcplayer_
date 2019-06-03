@@ -32,7 +32,6 @@ $screen-xl-min:         $screen-xl;
 
 // Valores maximos
 // Media queries nao sobrepoem quando requeridas, colocar um maximo
-//$screen-md-max:         ($screen-lg-min - .1); // 
 $screen-xs-max:         ($screen-sm-min - 1px); // 
 $screen-sm-max:         ($screen-md-min - 1px); // 
 $screen-md-max:         ($screen-lg-min - 1px); //
@@ -40,7 +39,7 @@ $screen-lg-max:         ($screen-xl-min - 1px); //
 
 
 //* MEDIDA PADRAO *//
-$space-base: 	1rem;				// 16px || 18px
+$space-base: 	1rem;
 
 $space-xxs: 	$space-base / 2;			
 $space-xs: 		$space-base; 		
@@ -59,9 +58,7 @@ $line-height-big:		modular-scale(3, 1);	// altura da linha maior
 // peso
 $font-light: 			300; 	// fonte fina 
 $font-regular: 			400;	// fonte normal
-$font-medium: 			500;	// fonte normal
 $font-bold: 			700;	// fonte grossa
-$font-bolder: 			900;	// fonte mais grossa
 
 // font
 $font-family-base:		"Montserrat", sans-serif; 		// fonte padrao
@@ -93,9 +90,7 @@ $gray-dk:				#3d3d4d;
 $gray:					lighten($gray-dk, 20%); 
 $gray-lt:            	lighten($gray-dk, 50%);  
 $gray-ltr:          	lighten($gray-dk, 67%); 
-$gray-dkr:				darken($gray-dk, 15%); // #1e1f26
-
-// $color-text:				white;	
+$gray-dkr:				darken($gray-dk, 15%);	
 
 // cor primaria
 $color-primary: 			$color-brand;
@@ -104,25 +99,11 @@ $color-primary-ltr:   		lighten($color-brand, 40%);
 $color-primary-dk:  		darken($color-brand, 7%);
 $color-primary-dkr:  		darken($color-brand, 14%);
 
-@debug "cor primaria 	#{$color-primary}"; 
-@debug "cor primaria lt 	#{$color-primary-lt}";
-@debug "cor primaria ltr 	#{$color-primary-ltr}";
-@debug "cor primaria dk 	#{$color-primary-dk}";
-@debug "cor primaria dkr 	#{$color-primary-dkr}";
-
-
 $color-secondary: 			$gray;
 $color-secondary-lt:   		$gray-lt;
 $color-secondary-ltr:   	$gray-ltr;
 $color-secondary-dk:  		$gray-dk;
 $color-secondary-dkr:  		$gray-dkr;
-
-@debug "cor cinza 	#{$gray}"; 
-@debug "cor cinza lt 	#{$gray-lt}";
-@debug "cor cinza ltr 	#{$gray-ltr}";
-@debug "cor cinza dk 	#{$gray-dk}";
-@debug "cor cinza dkr 	#{$gray-dkr}";
-
 
 // others
 $_link: '&:link, &:visited, &:active'; // link

@@ -170,7 +170,7 @@ $json_output = json_decode($json_movies_file);
 									</div>
 
 									<div class="col-12 mt-2 text-right">
-										<button type="submit" class="btn btn-primary rounded-pill">Enviar<i class="fas fa-chevron-right fa-sm animate-arrow ml-1"></i></button>
+										<button type="submit" class="btn btn-primary rounded-pill">Enviar<i class="fas fa-chevron-right fa-sm animate-arrow ml-1" aria-hidden="true"></i></button>
 									</div>
 								</div>
 

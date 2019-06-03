@@ -315,9 +315,7 @@
 a, .btn {
     #{$_link-hover} {
         .animate-arrow {
-            animation-duration: 1s;
-            animation-name: animate-arrow;
-            animation-iteration-count: infinite;
+            animation: 1s animate-arrow infinite;
         }
     }
 }
