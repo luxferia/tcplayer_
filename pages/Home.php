@@ -122,6 +122,7 @@ $json_output = json_decode($json_movies_file);
 							</div>
 
 							<fieldset>
+								<legend class="sr-only">Formulário de cadastro</legend>
 								<div class="row">
 									<div class="form-group col-12 col-lg-6">
 										<div class="label-floated">

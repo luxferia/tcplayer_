@@ -25,6 +25,8 @@
     </head>
 
     <body>
+        <a href="#main" class="sr-only sr-only-focusable">Saltar para o conteúdo</a>
+        
         <?php include('includes/_header.php'); ?>
 
         <main id="main">
