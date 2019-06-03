@@ -7,12 +7,6 @@ $json_output = json_decode($json_movies_file);
 ?>
 
 <section id="secao-webdoor" class="section-webdoor">
-	<?php /*
-    <div class="webdoor-item">
-        
-    </div><!-- / .webdoor-item -->
-    */ ?>
-
     <div class="webdoor-wrapper">
     	<div class="webdoor-carousel">
     		<?php foreach ($json_output->data as $movie) {
@@ -43,7 +37,7 @@ $json_output = json_decode($json_movies_file);
                     <div class="h6 text-light">Curta 7 dias grátis, assine por <span class="text-white font-weight-normal">R$ 37,90 / mês</span> e cancele quando quiser.</div>
 
                     <div class="mt-4">
-                        <a href="#" class="btn btn-primary rounded-pill btn-lg" data-after-text="Cadastre-se" data-toggle="modal" data-target="#signup-modal">Experimente grátis <i class="fas fa-chevron-right ml-2"></i></a>
+                        <a href="#" class="btn btn-primary rounded-pill btn-lg" data-after-text="Cadastre-se" data-toggle="modal" data-target="#signup-modal">Experimente grátis <i class="fas fa-chevron-right fa-sm animate-arrow ml-1"></i></a>
                     </div>
                 </div><!-- / .col -->
             </div><!-- / .row -->
@@ -176,7 +170,7 @@ $json_output = json_decode($json_movies_file);
 									</div>
 
 									<div class="col-12 mt-2 text-right">
-										<button type="submit" class="btn btn-primary rounded-pill">Enviar<i class="fas fa-chevron-right ml-2"></i></button>
+										<button type="submit" class="btn btn-primary rounded-pill">Enviar<i class="fas fa-chevron-right fa-sm animate-arrow ml-1"></i></button>
 									</div>
 								</div>
 

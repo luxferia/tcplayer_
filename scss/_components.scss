@@ -122,7 +122,6 @@
     }
 
     .item {
-        // overflow: hidden;
         display: block !important;
         @include position(relative, null);
 
@@ -174,18 +173,6 @@
 
 /* LABELS FLUTUATES (FORM)
  * -------------------------- */
- 
-[class="bg-dark"] {
-    .form-control {
-        color: white;
-        border-color: rgba(white, .5);
-
-        &:focus {
-            color: white;
-            border-color: $color-primary;
-        }
-    }
-}
 
 .label-floated {
     @include position(relative, null);

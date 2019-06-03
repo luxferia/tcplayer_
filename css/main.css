@@ -238,13 +238,6 @@ h6, .h6 {
 
 /* LABELS FLUTUATES (FORM)
  * -------------------------- */
-[class="bg-dark"] .form-control {
-  color: white;
-  border-color: rgba(255, 255, 255, 0.5); }
-  [class="bg-dark"] .form-control:focus {
-    color: white;
-    border-color: #e53c33; }
-
 .label-floated {
   position: relative; }
   .label-floated.form-group {
@@ -1456,5 +1449,19 @@ fieldset[disabled] .label-floated .form-control {
 /* ==========================================================================
    UTILITIES PROPRIOS
    ========================================================================== */
+@keyframes animate-arrow {
+  from {
+    left: 0;
+    opacity: 1; }
+  to {
+    left: 10px;
+    opacity: 0; } }
+.animate-arrow {
+  position: relative; }
+
+a:focus .animate-arrow, a:hover .animate-arrow, .btn:focus .animate-arrow, .btn:hover .animate-arrow {
+  animation-duration: 1s;
+  animation-name: animate-arrow;
+  animation-iteration-count: infinite; }
 
 /*# sourceMappingURL=main.css.map */

@@ -98,14 +98,30 @@ $( document ).ready( function() {
 			},
 			'signup-city': {
 				required: true
-			},
+			}
 		},
 		messages: {
+			'signup-name': {
+				required: 'Este campo é obrigatório.',
+				minlength: 'Digite ao menos 3 caracteres.'
+			},
+			'signup-email': {
+				required: 'Este campo é obrigatório',
+				email: 'Digite um email válido.'
+			},
 			'signup-cpf': {
-				minlength: 'Por favor, forneça um CPF válido'
+				required: 'Este campo é obrigatório.',
+				minlength: 'Digite um CPF válido.'
 			},
 			'signup-birthday': {
-				minlength: 'Por favor, forneça uma data válida'
+				required: 'Este campo é obrigatório.',
+				minlength: 'Digite uma data válida.'
+			},
+			'signup-uf': {
+				required: 'Este campo é obrigatório.'
+			},
+			'signup-city': {
+				required: 'Este campo é obrigatório.'
 			}
 		},
 		errorElement: 'div',
