@@ -2,7 +2,7 @@
 
 Acesse: http://stephanneleao.000webhostapp.com/tcplay/
 
-Esta landing page foi feita em PHP para o teste de Front-End baseada no wireframe proposto, adaptado para o desktop,  respeitando a Acessibilidade. Os arquivos do wireframe encontram-se na pasta do projeto. Pré-processador utilizado: SASS.
+Esta landing page foi feita em PHP para o teste de Front-End baseada no wireframe proposto, adaptado para o desktop,  respeitando a Acessibilidade. Os arquivos do wireframe encontram-se na pasta do projeto ou clique nos links. Pré-processador utilizado: SASS.
 
 ## Como instalar:
 

@@ -9,7 +9,7 @@
    ========================================================================== */
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #eeeef2; }
+  background-color: #f7f7f8; }
 
 a {
   color: #ebebeb;
@@ -111,7 +111,7 @@ h6, .h6 {
     left: 0;
     right: 0; }
   .webdoor-carousel .item {
-    background-color: #eeeef2;
+    background-color: #f7f7f8;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -370,7 +370,7 @@ fieldset[disabled] .label-floated .form-control {
 .modal-signup .label-floated.filled label {
   color: #bebecb; }
 .modal-signup .close {
-  color: #eeeef2;
+  color: #f7f7f8;
   text-shadow: 0 1px 0 black; }
 .modal-signup .form-control option {
   background-color: #3d3d4d; }
@@ -1374,7 +1374,7 @@ fieldset[disabled] .label-floated .form-control {
   color: #6a6a86 !important; }
 
 .text-light {
-  color: #eeeef2 !important; }
+  color: #f7f7f8 !important; }
 
 /* ==========================================================================
    MODIFICACOES DE PLUGINS
